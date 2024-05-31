@@ -1,0 +1,421 @@
+Unicode snowman: ☃️
+Hello world!
+Bonjour le monde!
+مرحبا بالعالم
+こんにちは世界
+Привет мир
+안녕하세요 세계
+你好，世界
+नमस्ते दुनिया
+👋🌎
+I love 🍕
+This is a sentence without spaces.
+This     is     a     sentence     with     extra     spaces.
+How about some punctuation?!!
+What about URLs? https://www.google.com
+Can we handle email addresses? user@example.com
+How about numbers? 123 45.6 -78.9
+Mixed script: 你好 world! 🌍
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum enim ac tellus malesuada, a consectetur nibh efficitur. 🚀🚀🚀
+Привет мир! Как дела? 😊
+Bonjour le monde! Comment allez-vous? 🌍
+¡Hola mundo! ¿Cómo estás? 😃
+こんにちは世界！お元気ですか？👋
+你好，世界！最近怎么样？😉
+مرحبا بالعالم! كيف حالك؟ 😎
+ਹੈਲੋ ਦੁਨੀਆ! ਕੀ ਹਾਲ ਹੈ? 😄
+હેલો વિશ્વ! કેમ છો? 🙏
+स्वागत है दुनिया! क्या हाल है? 😍
+ಹಲೋ ವಿಶ್ವ! ಹೇಗಿದೆ? 🤔
+សួស្តី​ពិភពលោក! តើ​អ្នក​ស្រលាញ់​ទេ? 😊
+สวัสดีชาวโลก! สบายดีหรือ? 😄
+안녕하세요 세상아! 어떻게 지내고 있어요? 😎
+Hi world! How are you? 😃
+This is a longer text without any special characters or emojis. It includes spaces, punctuation, and multiple sentences. Let's see how the tokenizer handles it!
+这是一个没有特殊字符或表情符号的较长文本。它包括空格、标点符号和多个句子。让我们看看分词器如何处理它！
+Це довший текст без особливих символів або емодзі. Він містить пробіли, пунктуацію та кілька речень. Подивимось, як розбірник обробляє його!
+這是一段沒有特殊字符或表情符號的較長文字。它包括空格、標點符號和多個句子。讓我們看看斷詞器如何處理它！
+هذا نص طويل بدون أي رموز خاصة أو إيموجيات. يتضمن النص فراغات وترقيم وعدة جمل. دعونا نرى كيف يتعامل المحلل النحوي معه!
+Three swans in purple tutus pirouetting on a tightrope
+The moon is made of cheese and the stars are made of jelly beans
+A giant squid playing the saxophone at the bottom of the ocean
+An army of robot penguins waddling on a glacier in Antarctica
+A wizard in a top hat riding a unicycle while juggling flaming pineapples
+A group of ninja cats practicing their martial arts skills in a bamboo forest
+A friendly alien offering a cup of tea and some cookies to a curious earthling
+Two giraffes in bow ties and monocles having a conversation over tea
+Bu cümlenin anlamı ne? 😄
+Tu as mangé des croissants ce matin? 🥐
+Mi padre tiene un gato negro y blanco. 🐱
+Eu gosto de jogar futebol aos domingos. ⚽️
+Я люблю есть пельмени со сметаной. 🥟
+한국 음식을 먹어 본 적이 있나요? 🍚
+私は毎日、朝ごはんを食べます。 🍳
+我喜欢吃烤鸭。 🦆
+כן, אני מבין את זה. אבל מה הפתרון?
+என்ன பார்க்க வேண்டும் என்று சொல்லுங்கள்
+¿Cómo puedo ayudarte hoy?
+എന്താണ് നിങ്ങളുടെ പ്രശ്നം?
+Ce n'est pas une bonne idée de faire ça.
+पैसे का कोई महत्व नहीं है।
+Ας μιλήσουμε λίγο για την κατάστασή σου.
+Я знаю, что вы хотите это сделать.
+Das macht überhaupt keinen Sinn.
+¿Podría decirme qué debo hacer?
+Mi serve il tuo aiuto, per favore.
+আমি নিশ্চয়ই এটি করতে পারবো না।
+Elle n'a jamais été dans cette ville.
+Jeg kan ikke hjælpe dig med det.
+나는 그것이 싫어요.
+Քննարկում ենք հետևյալ նախագծերը:
+आपकी मदद करने के लिए मैं यहाँ हूँ।
+Det här kommer inte att fungera.
+Πού μπορώ να βρω περισσότερες πληροφορίες;
+Я уверен, что ты справишься.
+Ce n'est pas ce que j'ai dit.
+ഞാൻ പറഞ്ഞതു അല്ലാത്തതാണ്.
+Kan du hjælpe mig med dette problem?
+당신은 어떻게 생각합니까?
+Mi piacerebbe fare una passeggiata.
+আমি তার সাথে আছি।
+Tu sais ce que tu fais, n'est-ce pas?
+लोग बहुत कुछ बोलते हैं।
+Πες μου τι σκέφτεσαι.
+Мы сделаем это вместе.
+J'ai peur de ne pas y arriver.
+Quelle est votre couleur préférée?
+Jaka jest Twoja ulubiona potrawa?
+Qual é a sua música favorita?
+Hvad er din yndlingssang?
+Koji je tvoj omiljeni film?
+Melyik a kedvenc sportod?
+Qual è il tuo film preferito?
+Koja je tvoja omiljena knjiga?
+Cuál es tu película favorita?
+Kas on sinu lemmikmuusikastiil?
+Quina és la teva sèrie preferida?
+Quale è il tuo libro preferito?
+Kurš ir tavs mīļākais dzīvnieks?
+Qual é o teu desporto favorito?
+Cuál es tu color favorito?
+Koji je tvoj omiljeni žanr filma?
+Kateri je tvoj najljubši okus sladoleda?
+Quel est ton livre préféré?
+Qual é a tua cor favorita?
+Koja ti je omiljena boja?
+Melyik a kedvenc étel?
+Koji je tvoj omiljeni grad?
+Quale è il tuo piatto preferito?
+Kurš ir tavs mīļākais TV šovs?
+Qual é a tua série de TV favorita?
+Katera je tvoja najljubša barva?
+Koji je tvoj omiljeni restoran?
+Qual é o teu hobby favorito?
+Koji je tvoj omiljeni bend?
+Kurš ir tavs mīļākais mākslinieks?
+Quina és la teva pel·lícula preferida?
+Qual é a tua música favorita?
+Koji ti je omiljeni grad?
+Katera je tvoja najljubša jed?
+Quel est ton plat préféré?
+Kurš ir tavs mīļākais sporta veids?
+Qual é o teu livro preferido?
+Koji ti je omiljeni hobi?
+Quale è il tuo colore preferito?
+Katera je tvoja najljubša TV serija?
+Quina és la teva pel·lícula preferida?
+Koji je tvoj omiljeni glumac/glumica?
+Qual é o teu restaurante favorito?
+Kurš ir tavs mīļākais veids, kā pavadīt laiku?
+Qual é a tua série favorita?
+Koja ti je omiljena hrana?
+Koji je tvoj omiljeni pisac/pisacica?
+Quel est ton sport préféré?
+Katera je tvoja najljubša pesem?
+Qual é o teu escritor favorito?
+Kurš ir tavs mīļākais žanrs?
+Quale è il tuo passatempo preferito?
+Koji ti je omiljeni film
+👉🏼🌍 Bienvenidos a la tierra! ¿Cómo te encuentras hoy? 😎🌺
+🎉🎊 Tutti pronti per la festa? Io si! 🎂🥳🎈
+👋🏻 Hallo daar, hoe gaat het vandaag met je? 🌞🌷
+🍕🍟 Salut! Vous préférez la pizza ou les frites? 🍔🍟
+👩🏽‍🦱 Ciao mondo! Come stai? Spero che tu abbia una bellissima giornata! 😊🌸
+👨🏼‍🦳¡Hola mundo! ¿Cómo estás? Espero que tengas un día maravilloso! 😎🌺
+👩🏻‍🦰 Salut les gars! Comment ça va aujourd'hui? J'espère que tout va bien! 🌞🌷
+🍺🍷 Dobry wieczór! Jak się dziś czujesz? 🎉🎂
+👩🏾‍🦱 Olá mundo! Como você está? Espero que tenha um ótimo dia! 😊🌸
+👩🏻‍🦱 Hallo Welt! Wie geht es dir? Ich hoffe, du hast einen wunderschönen Tag! 😊🌸
+🐶🐱 Bonjour le monde! Aimez-vous les chiens ou les chats? 🐶🐱
+👋🏼 Hallo verden! Hvordan går det i dag? 🌞🌷
+🎶🎵 Hej världen! Vilken musik gillar du att lyssna på? 🎧🎤
+👽🛸 Merhaba dünya! Bugün nasılsın? Umarım harika bir gün geçiriyorsun! 😊🌸
+👨🏽‍🦳 Hallo wereld! Hoe gaat het vandaag met je? 🌞🌷
+👩🏼‍🦳 Ciao mondo! Come stai? Spero che tu abbia una bellissima giornata! 😊🌸
+🌈🦄 Hello world! Do you believe in magic? ✨🎩
+🐦🐤 Tere maailm! Kas sa armastad linde? 🐦🐤
+🌌🚀 Hallo Welt! Was ist dein Lieblingsfilm über Weltraumabenteuer? 🌠🪐
+👨🏻‍🦱 Olá mundo! Como você está? Espero que tenha um ótimo dia! 😊🌸
+🌍🌊 Bonjour le monde! Aimez-vous la plage ou les montagnes? 🏖️⛰️
+👩🏼‍🦰 Hallo Welt! Was ist dein Lieblingslied im Moment?
+I'm feeling 😊 very happy today 😍
+🍔 Let's grab some food 🍟 and hang out 🎉
+🌸 Spring is my favorite season 🌺 what's yours?
+⚽ I love playing sports 🎾 especially tennis 🏸
+🎥 I just watched the latest movie 🎞️ and it was amazing 🤩
+I can't wait for 🎄 Christmas 🎁 to arrive 🎅
+📚 I'm currently reading a new book 📖 and it's so interesting 🤓
+🌊 The beach 🏖️ is my favorite place to relax and unwind 🧘‍♂️
+🚗 Road trips 🛣️ are so much fun 🎉 I love traveling 🌍
+🍿 I'm going to watch a movie 🎬 tonight with some popcorn 🍫
+🍕 Pizza 🍟 is my all-time favorite food 🍔 what's yours?
+🌅 The sunrise 🌄 is one of the most beautiful things I've ever seen 🌞
+🏰 I love visiting castles 🏯 and learning about their history 📜
+💻 I spend most of my time on the computer ⌨️ working on projects 💼
+📺 I'm currently binge-watching a new series 🍿 and it's so good 🤩
+🎨 Art 🖌️ is one of my favorite hobbies 🎭 what do you like to do?
+🎶 I love listening to music 🎧 especially while working 🎹
+🏞️ Nature 🌲 is so beautiful 🌳 I love going on hikes 🚶‍♂️
+🌌 The stars ✨ are so mesmerizing 🌟 I love stargazing 🌠
+📷 Photography 📸 is one of my favorite hobbies 🌉 what's yours?
+🍦 Ice cream 🍨 is my go-to dessert 🎂 what's yours?
+🎡 I love going to amusement parks 🎢 and riding roller coasters 🎠
+🐶 Dogs 🐕 are the best 🐾 what's your favorite animal?
+🌈 Rainbows 🌈 are so beautiful 🌞 they make me so happy 🌸
+🚣‍♀️ I love kayaking 🛶 it's so peaceful on the water 🌊
+🎮 Video games 🎲 are so much fun 🕹️ what's your favorite game?
+🏠 Home 🏡 is my favorite place to be 🌅 where's yours?
+🍩 Donuts 🍩 are my favorite snack 🍫 what's yours?
+🚴‍♀️ I love going for bike rides 🚴‍♂️ it's a great way to stay active 🏃‍♀️
+👩‍🍳 Cooking 👨‍🍳 is one of my favorite hobbies 🍲 what do you like to cook?
+🍁 Fall 🍂 is my favorite season 🍃 what's yours?
+🎄 Christmas 🎅 is my favorite holiday 🎁 what's yours?
+🌞 Let's enjoy the beautiful day at the beach, swimming in the 🌊 and soaking up the ☀️!
+👨‍👩‍👧‍👦 Family is the most important thing in life. Spending time with your loved ones is priceless! ❤️
+🎉 Let's celebrate the special occasion with a huge party, with lots of 🎁 and 🎂 for everyone to enjoy!
+📖 Reading is one of the best ways to expand your knowledge and imagination. There's a book out there for everyone! 📚
+👍 Positive thinking can change your life. Believe in yourself and the possibilities that the future holds! 😃
+🌲 Nature is full of wonders, from the 🌺 and 🌸 in the spring to the 🍁 and 🍂 in the fall. Take a walk and enjoy the beauty around you!
+💻 Technology is constantly changing and improving our lives. We can connect with people all over the world and access information at our fingertips!
+🎵 Music has the power to inspire and uplift us. Whether it's 🎧 on your headphones or a live concert, let the rhythm move you!
+🌎 We all share this planet and have a responsibility to take care of it. Let's work together to create a sustainable future for generations to come!
+👀 Seeing the world through someone else's eyes can broaden your perspective and help you grow as a person. Be open-minded and empathetic!
+🍔 Food is a universal language that brings people together. From 🍕 to 🍣, there's something for everyone to enjoy!
+💪 Challenges are a part of life, but they also make us stronger and more resilient. Don't give up, keep pushing forward!
+😴 Getting enough sleep is crucial for our health and wellbeing. Make sure you prioritize rest and relaxation in your daily routine!
+🤝 Building strong relationships with others can enrich your life and bring joy and fulfillment. Take the time to connect and nurture your friendships!
+🚀 We have the potential to achieve great things, but it takes hard work and determination. Dream big and chase your goals!
+🧘‍♀️ Practicing mindfulness and meditation can help reduce stress and improve mental clarity. Take a few deep breaths and find your inner peace!
+🎨 Creativity comes in many forms, from painting and writing to music and dance. Let your imagination run wild and express yourself!
+👨‍🏫 Education is a lifelong journey that can open doors to new opportunities and perspectives. Keep learning and growing every day!
+🏋️‍♀️ Exercise is essential for our physical and mental health. Whether it's a workout at the gym or a walk in the park, make movement a priority!
+🧘‍♂️ Yoga is a wonderful way to improve flexibility, strength, and relaxation. Find a class or practice at home and feel the benefits!
+🌟 Every person has their own unique talents and gifts. Embrace your individuality and shine your light for the world to see!
+📈 Success is different for everyone, but it always requires hard work and dedication. Set goals and take action to make your dreams a reality!
+Ïâ kòtã ńã hî ílà tò wẹyí fún ìbẹ̀rẹ̀, tún dédé òun kò wá. 😂🤣😜
+আমি আপনাকে ভালো জানি না, কিন্তু তুমি সুন্দর। 😊💕🌹
+Is cian dom bheith ag caint leat, ach is breá liom tú fós. ❤️🥰😘
+शब्द बदलों और शब्दों की इनकार करने की कला एक नैतिक कला है। 😇🙏🌺
+Ma imniġġihx li għandek tgħidli? Biss qalbi u inti tnixtieq u aqbel. ❤️😍💘
+وتحتفظ اللغة بقدرتها العجيبة على التلاعب بالأشياء. 🤯🤔😎
+Nihayetinde seni anlıyorum, ama hala seni seviyorum. 😘💖👄
+Če lahko kdo razume, kaj pišem, potem sem v resnih težavah. 😅🤔😜
+Jeg prøver å finne ord, men hodet mitt er fullt av troll. 🧝‍♀️🧝‍♂️👹
+Porque el arte siempre está en lo que parece imposible de hacer. 😎🎨🎭
+Začinjam razmišljati da sam ja jedina osoba koju znam koja se iskreno ne voli. 😔🤔😩
+Tidak peduli seberapa kuat Anda, akan selalu ada orang yang lebih kuat. 😔🤜🤛
+Seyahat etmek, kendimizi keşfetmemizi sağlar. 🌎🧳🚗
+Kdybych byl opilý, řekl bych ti něco krásného. 🍺😜🥴
+Der Mensch hat die Fähigkeit, seine Wahrnehmung zu verändern. 🤯🤔🌌
+Не знаю, что тебе сказать, но ты мне нравишься. 😘💕👄
+En ny dag, en ny start, en ny sjanse til å gjøre noe fantastisk. 🌅🌞🌟
+Jeg er lei av å være lei av alt. 😒🤷‍♀️😔
+Hey!     Wie geht's? Ich hoffe, es geht dir gut! 🙂
+Buongiorno! Come stai? Spero che tutto stia andando bene! 🌞
+Bonjour ! Comment vas-tu ? J'espère que tu te portes bien ! 🌼
+Hallo daar! Hoe gaat het? Ik hoop dat het goed met je gaat! 😊
+Guten Tag! Wie geht es Ihnen? Ich hoffe, es geht Ihnen gut! 🌻
+¡Hola! ¿Cómo estás? Espero que estés bien! 🌺
+Salut! Comment ça va? J'espère que tout va bien pour toi! 🍀
+Ciao! Come va? Spero che tu stia bene! 🍕
+Здравствуйте! Как поживаете? Надеюсь, у вас все хорошо! ☀️
+Hej! Hur mår du? Jag hoppas att du mår bra! 🌈
+Hallo! Wie geht's? Ich hoffe, es geht dir gut! 🎉
+Привет! Как дела? Надеюсь, у тебя все хорошо! 🌸
+Hello! How are you? I hope you're doing well! 🌟
+I can't believe it! It's finally happening!!!
+What in the world are you doing???!!!
+I need more time... I'm not ready yet....
+Oh no, not again....
+That's it! I'm done with this nonsense...
+Why did you do that? You knew it was wrong!!
+I have a feeling something bad is going to happen...
+This is madness!!!
+I thought I was ready, but now I'm not so sure....
+Where did you come from??? I didn't see you there....
+print('Hello, world!')
+System.out.println('Hello, world!');
+console.log('Hello, world!');
+printf('Hello, world!\\n');
+echo 'Hello, world!';
+puts 'Hello, world!';
+MessageBox.Show('Hello, world!');
+alert('Hello, world!');
+document.write('Hello, world!');
+cout << 'Hello, world!' << endl;
+NSLog(@'Hello, world!');
+Debug.Log('Hello, world!');
+print('Hello, world!', end='');
+System.Console.WriteLine('Hello, world!');
+echo('Hello, world!');
+write('Hello, world!');
+print('Hello, world!\\n', end='')
+console.log(`Hello, world!`);
+document.getElementById('output').innerHTML = 'Hello, world!';
+alert('Hello, world!');
+MessageBox.Show('Hello, world!');
+print('Hello, world!', sep='', end='\\n')
+print('Hello,', ' world!')
+console.log('Hello,', ' world!');
+puts('Hello,', ' world!');
+alert('Hello,', ' world!');
+printf('Hello, %s!', 'world');
+document.write('Hello,', ' world!');
+cout << 'Hello,' << ' world!' << endl;
+NSLog(@'Hello,%@ world!', ',');
+Debug.Log('Hello,' + ' world!');
+MessageBox.Show('Hello,' + ' world!');
+console.log(`Hello,${' world!'}\\n`);
+System.Console.WriteLine('Hello,' + ' world!');
+echo('Hello,', ' world!');
+write('Hello,', ' world!');
+print('Hello,', ' world!', sep='')
+alert('Hello,', ' world!');
+printf('Hello, %s%s', ',', ' world!');
+const numbers = [1, 2, 3, 4, 5].map(n => n * 2).filter(n => n % 4 === 0);
+function factorial(n) { return n === 1 ? 1 : n * factorial(n - 1) }
+const words = ['foo', 'bar', 'baz']; const capitalizedWords = words.map(word => word[0].toUpperCase() + word.slice(1));
+SELECT * FROM users WHERE age > 18 AND city = 'New York';
+def add(x: Int, y: Int): Int = x + y
+const dogs = [{ name: 'Fido', age: 3 }, { name: 'Rufus', age: 5 }]; const totalAge = dogs.reduce((acc, dog) => acc + dog.age, 0);
+const sum = (a, b) => a + b; const multiply = (a, b) => a * b; const divide = (a, b) => a / b;
+var i: Int = 0; while (i < 10) { print(i); i += 1 }
+public class Employee { private String name; private int age; public Employee(String name, int age) { this.name = name; this.age = age; } }
+const fruits = ['apple', 'banana', 'orange', 'pear', 'grape']; const firstThree = fruits.slice(0, 3);
+The world is an enormous and diverse place, filled with countless opportunities to explore and learn. From the bustling streets of New York City to the tranquil forests of the Amazon, each corner of the globe offers a unique perspective on life. 🌍🌳🌆
+Life is a journey filled with ups and downs, twists and turns. Along the way, we encounter both joy and sorrow, success and failure, love and heartbreak. But no matter what obstacles we face, we must always remember to stay true to ourselves and follow our dreams. 🌟💔🚶
+Music has the power to move us in ways we never thought possible. From the soulful melodies of a blues guitar to the energetic beats of a hip-hop track, each genre has its own unique flavor and style. Whether you're a fan of classical symphonies or modern pop hits, there's something out there for everyone. 🎶🎤🎧
+Nature is a wondrous and awe-inspiring force, full of beauty and mystery. From the majesty of a soaring eagle to the delicate petals of a wildflower, every living thing has its own unique story to tell. By exploring and appreciating the natural world around us, we can gain a deeper understanding of ourselves and the world we live in. 🌿🐦🌷
+Art is a reflection of the human experience, a way of expressing our thoughts, feelings, and emotions through a variety of mediums. From painting and sculpture to literature and film, each form of art offers its own unique insights into the human condition. By exploring the works of artists throughout history and across the globe, we can gain a deeper appreciation for the diversity and richness of human culture. 🎨📚🎥
+Quelle est votre couleur préférée?
+Jaka jest Twoja ulubiona potrawa?
+Qual é a sua música favorita?
+Hvad er din yndlingssang?
+Koji je tvoj omiljeni film?
+Quel est votre livre préféré?
+Cuál es tu película favorita?
+Quel est votre endroit préféré pour voyager?
+Jakie jest twoje ulubione miejsce na świecie?
+Qual é o seu hobby favorito?
+Quel est votre sport préféré?
+Quel est votre nom d'utilisateur #Trackmania ?
+What's your $ favorite car in Trackmania?
+¿Cuál es tu pista @Trackmania favorita?
+Jakiego narzędzia używasz do tworzenia torów w #Trackmania?
+What's your high $score in #Trackmania?
+Quel est votre environnement #Trackmania préféré?
+What's your @favorite type of race in #Trackmania?
+Quelle est votre compétition #Trackmania préférée?
+¿Cuál es tu $modo de juego @Trackmania favorito?
+Quel est votre pack de musique #Trackmania préféré?
+¿Cómo puedo conseguir el $record en la pista más difícil de #Trackmania con estos controles #@&%*?
+Quel est le niveau de difficulté le plus élevé que vous avez terminé dans #Trackmania ? Et combien de temps cela vous a-t-il pris ?
+Jakiego typu samochód lubisz używać w #Trackmania, gdy musisz wykonać skok z rampy i uniknąć ściany #@&%*?
+Comment partager ma meilleure performance dans #Trackmania avec mes amis sur les réseaux sociaux ? Y a-t-il des raccourcis clavier #@&%* pour cela?
+Quel est votre avis sur les nouvelles fonctionnalités de #Trackmania, telles que la fonction de génération aléatoire de circuits, les défis communautaires et les classements en ligne #@&%*?
+Jakie są twoje ulubione motywy przewodnie utworów muzycznych w #Trackmania? Czy są jakieś, które naprawdę Cię motywują i zwiększają twoją wydajność #@&%*?
+What is your favorite emoji 🤔 and why do you like it?
+¿Cuál es tu palabra favorita en español que contiene la letra ñ?
+Quelle est votre chanson préférée en français avec des accents sur les lettres ?
+आपका सबसे पसंदीदा शब्द हिंदी में क्या है जो दो मात्राओं के साथ शुरू होता है?
+你最喜欢的汉字是什么？请用汉字回答。
+Qual é a sua palavra favorita em português que contém o caracter ç?
+Какой ваш любимый символ кириллицы и почему?
+あなたが好きな漢字は何ですか？漢字で答えてください。
+Quel est votre caractère chinois préféré ? Et comment le dessiner ?
+உங்களுக்கு பிடித்த தமிழ் எழுத்து என்னும் எழுத்து எது?
+🌞🌈🌻🦋🌺
+🐶🐱🐹🐰🐻🐨🐼🐵🐔🐸🦊🦝🐢
+🍕🍔🍟🌭🌮🥪🍱🍣🍪🍰🎂
+🎭🎨🎬🎥🎤🎧🎼🎹🥁🎻
+🌲🌳🌴🌵🌷🌸🍀🍁🍂🍃
+🚀🛰️🛸🌌🌠🌟🪐🌎🌍🌏
+🏠🏡🏢🏣🏤🏥🏦🏨🏩🏪🏫🏬
+🚲🛴🚗🚕🚙🚚🚛🚜🛵🏍️🛺
+🧘‍♀️🏋️‍♀️🤸‍♀️🏊‍♀️🚴‍♀️🏃‍♀️🧗‍♀️🏄‍♀️🤽‍♀️🤾‍♀️🤹‍♀️
+🥝🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓
+🍁🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🥥
+🐠🐟🐡🦀🦑🐙🦐🦞🦪🦭
+🐘🦏🦒🐪🐫🦘🦙🐃🐄🐎🦌
+🦜🦢🦩🦚🦉🦆🦢🐧🐦🦤🦜
+🍆🥦🌽🌶️🥕🧄🧅🥔🥬🥒🥑
+🚂🚆🚊🚞🚅🚄🚈🚉🚇🚝
+🛴🛹🛼🛷🚴‍♂️🚴‍♀️🚵‍♂️🚵‍♀️🏊‍♂️🏊‍♀️
+🐾🦶👣👟👞👠👡👢🧦🧤🧣
+🏰🏯🏟️🏛️🏨🏦🏢🏣🏬🏭🏫
+🍵☕🍺🍻🍹🍸🍷🥂🥃🥤
+🎾🏀🏐🏈🎱🪀🪁🏓🏸
+🚀🛸👽🛰️🪐🌠🌌🌍🌞
+🎸🎹🎤🎧🎻🎬🎥🎨🎭
+🐙🦑🦐🦞🦀🐡🐠🐟🐬🐳
+🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁
+🦆🦅🦉🦢🦩🦜🦚🐧🐦🦤🦜
+🍕🍔🌭🌮🌯🍟🍗🍖🍤🍣🍱
+🚀🛸👽🛰️🪐🌠🌌🌍🌞
+🎸🎹🎤🎧🎻🎬🎥🎨🎭
+🍏🍎🍐🍊🍋🍌🍉🍇🍓🍈🍒
+🚕🚗🚙🚌🚎🏎️🚓🚑🚒🚚🚛
+🚀🛰️👩‍🚀👨‍🚀👽🪐🌌🌠🛸
+🐘🦏🦒🐪🐫🦘🦙🐃🐄🐎🦌
+🚢🚤🛥️🛳️⛴️🚣‍♂️🚣‍♀️🚤
+🎉🎊🎁🎂🎈🥳🎆🎇🎡🎢🎠
+🍺🍻🍹🍸🍷🥂🥃🍾🍶🧉🍼
+Hello, how are you?
+Bonjour, comment ça va?
+Guten Tag, wie geht es Ihnen?
+Χαίρετε, τι κάνετε;
+Ciao, come stai?
+Zdravstvuyte, kak dela?
+Sveiki, kā jums klājas?
+Labas, kaip sekasi?
+Salut, cum te simți?
+Halló, hvernig hefurðu það?
+Hallo, hoe gaat het met u?
+Hei, hvordan har du det?
+Tere, kuidas sul läheb?
+Привет, как дела?
+Szia, hogy vagy?
+Moien, wéi geet et Iech?
+Salve, come va?
+Labdien, kā jums klājas?
+Sveikas, kaip sekasi?
+Sveiki, kā jums klājas?
+Hallå, hur mår du?
+Здраво, како си?
+czesc, jak sie masz?
+Halló, hvernig hefur þú það?
+Salut, comment vas-tu?
+Salam, nasılsın?
+Здравейте, как сте?
+Dobrý den, jak se máte?
+Zdravo, kako ste?
+Здравствуйте, как поживаете?
+Merhaba, nasılsın?
+Вітаю, як поживаєте?
+Сәлеметсіз бе, сіз қалайсыз?
+Hallo, hou gaat het met jou?
+Hallå, hur mår ni?
+Прывітанне, як пажываеце?
+Olá, como vai você?
+Здравствуй, как поживаете?
+Hola, ¿cómo estás?
