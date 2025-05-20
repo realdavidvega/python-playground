@@ -8,6 +8,7 @@ from langgraph.graph import add_messages, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 from typing_extensions import TypedDict, Annotated
 
+# 2. Add tools
 # To handle queries you chatbot can't answer "from memory", integrate a web search tool.
 # The chatbot can use this tool to find relevant information and provide better responses.
 
@@ -126,19 +127,13 @@ def main_basic_tools():
                 print("Assistant:", value["messages"][-1].content)
 
     while True:
-        try:
-            user_input = input("User: ")
-            if user_input.lower() in ["quit", "exit", "q"]:
-                print("Goodbye!")
-                break
-
-            stream_graph_updates(user_input)
-        except:
-            # fallback if input() is not available
-            user_input = "What do you know about LangGraph?"
-            print("User: " + user_input)
-            stream_graph_updates(user_input)
+        # What do you know about LangGraph?
+        user_input = input("User: ")
+        if user_input.lower() in ["quit", "exit", "q"]:
+            print("Goodbye!")
             break
+
+        stream_graph_updates(user_input)
 
 
 def main():
@@ -180,19 +175,13 @@ def main():
                 print("Assistant:", value["messages"][-1].content)
 
     while True:
-        try:
-            user_input = input("User: ")
-            if user_input.lower() in ["quit", "exit", "q"]:
-                print("Goodbye!")
-                break
-
-            stream_graph_updates(user_input)
-        except:
-            # fallback if input() is not available
-            user_input = "What do you know about LangGraph?"
-            print("User: " + user_input)
-            stream_graph_updates(user_input)
+        # What do you know about LangGraph?
+        user_input = input("User: ")
+        if user_input.lower() in ["quit", "exit", "q"]:
+            print("Goodbye!")
             break
+
+        stream_graph_updates(user_input)
 
 
 if __name__ == "__main__":

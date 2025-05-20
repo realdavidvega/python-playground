@@ -4,27 +4,37 @@ from typing_extensions import TypedDict, Annotated
 from langgraph.graph import StateGraph, START
 from langgraph.graph.message import add_messages
 
-# When defining a graph, the first step is to define its State. The State includes the graph's
-# schema and reducer functions that handle state updates. In our example, State is a TypedDict with
-# one key: messages. The add_messages reducer function is used to append new messages to the list instead of
-# overwriting it. Keys without a reducer annotation will overwrite previous values.
+# 1. Build a basic chatbot
+# In this tutorial, you will build a basic chatbot.
+# This chatbot is the basis for the following series of tutorials where you will progressively add
+# more sophisticated capabilities, and be introduced to key LangGraph concepts along the way. Let’s dive in! 🌟
 
 
 def main():
+    # Now you can create a basic chatbot using LangGraph. This chatbot will respond directly to user messages.
+
+    # Start by creating a StateGraph. A StateGraph object defines the structure of our chatbot as a "state machine".
+    # We'll add nodes to represent the llm and functions our chatbot can call and edges to specify how the
+    # bot should transition between these functions.
+
     # To learn more about state, reducers, and related concepts, see LangGraph reference docs.
     class State(TypedDict):
+        # Messages have the type "list". The `add_messages` function
+        # in the annotation defines how this state key should be updated
+        # (in this case, it appends messages to the list, rather than overwriting them)
         messages: Annotated[list, add_messages]
 
-    # A StateGraph object defines the structure of our chatbot as a "state machine".
-    # We'll add nodes to represent the llm and functions our chatbot can call and edges to specify how the bot should
-    # transition between these functions.
     graph_builder = StateGraph(State)
 
     # Our graph can now handle two key tasks:
-    #
     # - Each node can receive the current State as input and output an update to the state.
     # - Updates to messages will be appended to the existing list rather than overwriting it, thanks to the prebuilt
     # add_messages function used with the Annotated syntax.
+
+    # When defining a graph, the first step is to define its State. The State includes the graph's
+    # schema and reducer functions that handle state updates. In our example, State is a TypedDict with
+    # one key: messages. The add_messages reducer function is used to append new messages to the list instead of
+    # overwriting it. Keys without a reducer annotation will overwrite previous values.
 
     # Let's first select a chat model
 
@@ -63,20 +73,13 @@ def main():
                 print("Assistant:", value["messages"][-1].content)
 
     while True:
-        try:
-            user_input = input("User: ")
-
-            # You can exit the chat loop at any time by typing quit, exit, or q.
-            if user_input.lower() in ["quit", "exit", "q"]:
-                print("Goodbye!")
-                break
-            stream_graph_updates(user_input)
-        except:
-            # fallback if input() is not available
-            user_input = "What do you know about LangGraph?"
-            print("User: " + user_input)
-            stream_graph_updates(user_input)
+        # What do you know about LangGraph?
+        user_input = input("User: ")
+        if user_input.lower() in ["quit", "exit", "q"]:
+            print("Goodbye!")
             break
+
+        stream_graph_updates(user_input)
 
 
 if __name__ == "__main__":
