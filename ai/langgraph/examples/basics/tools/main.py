@@ -14,6 +14,9 @@ from typing_extensions import TypedDict, Annotated
 
 
 def main_basic_tools():
+    # Configure your environment with your search engine API key
+    # _set_env("TAVILY_API_KEY")
+
     # Define the web search tool
     search_tool = TavilySearch(max_results=2)
     llm_tools = [search_tool]
@@ -25,6 +28,8 @@ def main_basic_tools():
     graph_builder = StateGraph(State)
 
     # llm = init_chat_model("anthropic:claude-3-5-sonnet-latest")
+
+    # os.environ["GOOGLE_API_KEY"] = "..."
     llm = init_chat_model("google_genai:gemini-2.0-flash")
 
     # For the StateGraph you created in the chat example, add bind_tools on the LLM.

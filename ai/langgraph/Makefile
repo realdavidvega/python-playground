@@ -1,11 +1,14 @@
 lint:
 	uv run ruff format . && uv run ruff check . --fix
 
-example-chat:
-	uv run python examples/chat/main.py
+basics-chat:
+	uv run python examples/basics/chat/main.py
 
-example-tools:
-	uv run python examples/tools/main.py
+basics-tools:
+	uv run python examples/basics/tools/main.py
 
-example-memory:
-	uv run python examples/memory/main.py
+basics-memory:
+	uv run python examples/basics/memory/main.py
+
+basics-human:
+	uv run python examples/basics/human/main.py

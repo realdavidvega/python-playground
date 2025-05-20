@@ -27,8 +27,8 @@ def main():
     graph_builder = StateGraph(State)
 
     # Our graph can now handle two key tasks:
-    # - Each node can receive the current State as input and output an update to the state.
-    # - Updates to messages will be appended to the existing list rather than overwriting it, thanks to the prebuilt
+    # 1. Each node can receive the current State as input and output an update to the state.
+    # 2. Updates to messages will be appended to the existing list rather than overwriting it, thanks to the prebuilt
     # add_messages function used with the Annotated syntax.
 
     # When defining a graph, the first step is to define its State. The State includes the graph's
@@ -39,13 +39,27 @@ def main():
     # Let's first select a chat model
 
     # llm = init_chat_model("anthropic:claude-3-5-sonnet-latest")
+
+    # os.environ["GOOGLE_API_KEY"] = "..."
     llm = init_chat_model("google_genai:gemini-2.0-flash")
 
     # Next, add a "chatbot" node
     # Nodes represent units of work and are typically regular Python functions.
 
+    # The chatbot node function takes the current State as input
+    # and returns a dictionary containing the last message from the LLM as output
     def chatbot(state: State):
-        return {"messages": [llm.invoke(state["messages"])]}
+        # Get the current messages from the state
+        current_messages = state["messages"]
+
+        # Call the LLM with the current messages
+        message = llm.invoke(current_messages)
+
+        # print("Assistant:", message.content)
+
+        # Return the LLM's response, which will be added to the state
+        # This is because the add_messages reducer is used to update the state
+        return {"messages": [message]}
 
     # The first argument is the unique node name
     # The second argument is the function or object that will be called whenever
@@ -54,7 +68,7 @@ def main():
 
     # Notice how the chatbot node function takes the current State as input and returns a dictionary containing an
     # updated messages list under the key "messages". This is the basic pattern for all LangGraph node functions.
-    #
+
     # The add_messages function in our State will append the LLM's response messages to whatever messages are
     # already in the state.
 
@@ -66,9 +80,11 @@ def main():
     graph = graph_builder.compile()
 
     def stream_graph_updates(user_input: str):
+        # Yields a stream of updates from the graph, given the user's input
         for event in graph.stream(
             {"messages": [{"role": "user", "content": user_input}]}
         ):
+            # For each update, print the assistant's response
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)
 

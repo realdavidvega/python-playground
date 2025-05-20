@@ -33,6 +33,8 @@ def main():
     graph_builder = StateGraph(State)
 
     # llm = init_chat_model("anthropic:claude-3-5-sonnet-latest")
+
+    # os.environ["GOOGLE_API_KEY"] = "..."
     llm = init_chat_model("google_genai:gemini-2.0-flash")
 
     tool = TavilySearch(max_results=2)
