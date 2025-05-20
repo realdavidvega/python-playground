@@ -12,3 +12,6 @@ basics-memory:
 
 basics-human:
 	uv run python examples/basics/human/main.py
+
+basics-state:
+	uv run python examples/basics/state/main.py

@@ -2,7 +2,6 @@ from langchain.chat_models import init_chat_model
 from langchain_core.runnables import RunnableConfig
 from langchain_tavily import TavilySearch
 from langchain_core.tools import tool
-from langgraph.graph.state import CompiledStateGraph
 from typing_extensions import TypedDict, Annotated
 
 from langgraph.checkpoint.memory import MemorySaver
@@ -114,6 +113,7 @@ def main():
     for event in events:
         if "messages" in event:
             event["messages"][-1].pretty_print()
+
 
 if __name__ == "__main__":
     main()
