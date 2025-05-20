@@ -1,7 +1,5 @@
-from typing import Annotated
-
 from langchain.chat_models import init_chat_model
-from typing_extensions import TypedDict
+from typing_extensions import TypedDict, Annotated
 
 from langgraph.graph import StateGraph, START
 from langgraph.graph.message import add_messages
@@ -11,11 +9,12 @@ from langgraph.graph.message import add_messages
 # one key: messages. The add_messages reducer function is used to append new messages to the list instead of
 # overwriting it. Keys without a reducer annotation will overwrite previous values.
 
-# To learn more about state, reducers, and related concepts, see LangGraph reference docs.
-class State(TypedDict):
-    messages: Annotated[list, add_messages]
 
 def main():
+    # To learn more about state, reducers, and related concepts, see LangGraph reference docs.
+    class State(TypedDict):
+        messages: Annotated[list, add_messages]
+
     # A StateGraph object defines the structure of our chatbot as a "state machine".
     # We'll add nodes to represent the llm and functions our chatbot can call and edges to specify how the bot should
     # transition between these functions.
@@ -57,7 +56,9 @@ def main():
     graph = graph_builder.compile()
 
     def stream_graph_updates(user_input: str):
-        for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
+        for event in graph.stream(
+            {"messages": [{"role": "user", "content": user_input}]}
+        ):
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)
 
@@ -76,6 +77,7 @@ def main():
             print("User: " + user_input)
             stream_graph_updates(user_input)
             break
+
 
 if __name__ == "__main__":
     main()
