@@ -1,4 +1,3 @@
-import random
 import uuid
 
 from langchain_core.runnables import RunnableConfig
@@ -6,6 +5,7 @@ from langgraph.graph.state import CompiledStateGraph
 
 from app.resources.resources import resources
 from app.graph.graph import graph
+
 
 def __init_chat(stocks_graph: CompiledStateGraph, graph_config: RunnableConfig):
     def stream_graph_updates(content: str):
@@ -25,19 +25,16 @@ def __init_chat(stocks_graph: CompiledStateGraph, graph_config: RunnableConfig):
 
         stream_graph_updates(user_input)
 
+
 def __runnable_config():
     return RunnableConfig(configurable={"thread_id": uuid.uuid4().hex})
+
 
 if __name__ == "__main__":
     resources = resources()
     graph = graph(resources)
     config = __runnable_config()
 
-    graph.update_state(
-        config,
-        {
-            "favorite_symbol": "AAPL"
-        }
-    )
+    graph.update_state(config, {"favorite_symbol": "AAPL"})
 
     __init_chat(graph, config)
