@@ -3,19 +3,18 @@ from langgraph.graph import add_messages
 from langgraph.graph.state import CompiledStateGraph, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 from pydantic import BaseModel, Field
-from typing_extensions import Annotated
+from typing_extensions import Annotated, TypedDict
 
 from app.resources.resources import Resources
 
 
-class StockMarketState(BaseModel):
-    messages: Annotated[list, add_messages] = Field(default_factory=list)
-    symbol: str = Field(default="AAPL")
-
+class StockMarketState(TypedDict):
+    messages: Annotated[list, add_messages]
+    favorite_symbol: str
 
 def graph(resources: Resources) -> CompiledStateGraph:
     def __chatbot(graph_state: StockMarketState):
-        return {"messages": [resources.chat_model.invoke(graph_state.messages)]}
+        return {"messages": [resources.chat_model.invoke(graph_state["messages"])]}
 
     graph_builder = StateGraph(StockMarketState)
 
