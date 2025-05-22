@@ -20,12 +20,15 @@ def tools(alpha_vantage: AlphaVantageResources):
     def get_favorite_symbol(state: Annotated[dict, InjectedState]) -> str:
         """Get your favorite stock symbol."""
         favorite_symbol = state.get("favorite_symbol")
-        return f"Your favorite symbol is {favorite_symbol}" if favorite_symbol else "You have no favorite symbol set."
+        return (
+            f"Your favorite symbol is {favorite_symbol}"
+            if favorite_symbol
+            else "You have no favorite symbol set."
+        )
 
     @tool
     def set_favorite_symbol(
-            symbol: str,
-            tool_call_id: Annotated[str, InjectedToolCallId]
+        symbol: str, tool_call_id: Annotated[str, InjectedToolCallId]
     ) -> Command:
         """Set your favorite stock symbol."""
         if symbol == "":
