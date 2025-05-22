@@ -1,13 +1,12 @@
 [project]
-name = "langgraph-playground"
+name = "langgraph-playground-basics"
 version = "0.1.0"
 description = "Playground of LangGraph"
-requires-python = ">=3.9"
+requires-python = ">=3.13"
 dependencies = [
     "langchain-tavily>=0.1.6",
     "langchain[anthropic,google-genai]>=0.3.25",
     "langgraph>=0.4.5",
-    "langsmith>=0.3.42",
 ]
 
 [dependency-groups]
