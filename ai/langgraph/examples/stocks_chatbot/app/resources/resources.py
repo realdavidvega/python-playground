@@ -16,10 +16,10 @@ class Resources(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
 
-def resources() -> Resources:
+def resources(model: str = "google_genai:gemini-2.0-flash") -> Resources:
     alpha_vantage = AlphaVantageResources(time_series=TimeSeries())
     llm_tools = tools(alpha_vantage)
-    llm = init_chat_model("google_genai:gemini-2.0-flash", temperature=0)
+    llm = init_chat_model(model, temperature=0)
 
     return Resources(
         chat_model=llm.bind_tools(llm_tools),

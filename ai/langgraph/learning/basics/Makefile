@@ -18,3 +18,6 @@ human:
 
 state:
 	uv run python -m app.state.main
+
+time:
+	uv run python -m app.time.main
