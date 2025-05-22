@@ -1,13 +1,13 @@
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.state import CompiledStateGraph
 
-from app.resources import resources
-from app.graph import graph
+from app.resources.resources import resources
+from app.graph.graph import graph
 
 
 def init_chat(stocks_graph: CompiledStateGraph):
     def stream_graph_updates(content: str):
-        events = graph.stream(
+        events = stocks_graph.stream(
             input={"messages": [{"role": "user", "content": content}]},
             config=RunnableConfig(configurable={"thread_id": "1"}),
             stream_mode="values",

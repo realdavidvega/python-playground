@@ -1,14 +1,13 @@
 from alpha_vantage.timeseries import TimeSeries
 from langchain.chat_models import init_chat_model
 from langchain_core.runnables import Runnable
-from langchain_core.tools import tool
 from langgraph.checkpoint.memory import MemorySaver
 from pydantic import BaseModel, ConfigDict
 from typing_extensions import Callable
 
-class AlphaVantageResources(BaseModel):
-    time_series: TimeSeries
-    model_config = ConfigDict(arbitrary_types_allowed=True)
+from app.resources.alpha_vantage import AlphaVantageResources
+from app.graph.tools import tools
+
 
 class Resources(BaseModel):
     chat_model: Runnable
@@ -18,14 +17,8 @@ class Resources(BaseModel):
 
 
 def resources() -> Resources:
-    @tool
-    def __get_intraday_data(symbol: str) -> str:
-        """Search for a stock symbol and get intraday data."""
-        return alpha_vantage.time_series.get_intraday(symbol)
-
     alpha_vantage = AlphaVantageResources(time_series=TimeSeries())
-    get_intraday_tool = __get_intraday_data
-    llm_tools = [get_intraday_tool]
+    llm_tools = tools(alpha_vantage)
     llm = init_chat_model("google_genai:gemini-2.0-flash", temperature=0)
 
     return Resources(

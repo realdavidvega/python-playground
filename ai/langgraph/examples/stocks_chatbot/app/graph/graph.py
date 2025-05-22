@@ -5,7 +5,7 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
-from app.resources import Resources
+from app.resources.resources import Resources
 
 
 class StockMarketState(BaseModel):
