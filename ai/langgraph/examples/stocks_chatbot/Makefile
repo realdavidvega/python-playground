@@ -4,5 +4,5 @@ lint:
 sync:
 	uv sync
 
-run:
-	uv run python app/main.py
+start:
+	uv run python -m app.main

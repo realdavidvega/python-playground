@@ -5,16 +5,16 @@ sync:
 	uv sync
 
 chat:
-	uv run python app/chat/main.py
+	uv run python -m app.chat.main
 
 tools:
-	uv run python app/tools/main.py
+	uv run python -m app.tools.main
 
 memory:
-	uv run python app/memory/main.py
+	uv run python -m app.memory.main
 
 human:
-	uv run python app/human/main.py
+	uv run python -m app.human.main
 
 state:
-	uv run python app/state/main.py
+	uv run python -m app.state.main
