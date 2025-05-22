@@ -1,6 +1,6 @@
 # Python Playground Monorepo
 
-## Machine Learning and AI
+## Machine Learning
 
 ### Learning
 
@@ -9,3 +9,16 @@
 ### Code
 
 1. Playground: playground with random Machine Learning and AI code and libraries.
+
+## AI
+
+### LangGraph
+
+#### Learning
+
+1. Basics: tutorials to get acquainted with LangGraph's key concepts and features.
+2. Server: basic LangGraph application server.
+
+#### Examples
+
+1. Stocks Chatbot: simple project with a small graph and light AI usage covering the basics of LangGraph.
