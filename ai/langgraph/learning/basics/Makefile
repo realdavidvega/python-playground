@@ -4,20 +4,23 @@ lint:
 sync:
 	uv sync
 
-chat:
-	uv run python -m app.chat.main
+basics-chat:
+	uv run python -m src.basics.chat.main
 
-tools:
-	uv run python -m app.tools.main
+basics-tools:
+	uv run python -m src.basics.tools.main
 
-memory:
-	uv run python -m app.memory.main
+basics-memory:
+	uv run python -m src.basics.memory.main
 
-human:
-	uv run python -m app.human.main
+basics-human:
+	uv run python -m src.basics.human.main
 
-state:
-	uv run python -m app.state.main
+basics-state:
+	uv run python -m src.basics.state.main
 
-time:
-	uv run python -m app.time.main
+basics-time:
+	uv run python -m src.basics.time.main
+
+agents-handoffs:
+	uv run python -m src.agents.handoffs.main
