@@ -154,12 +154,12 @@ def main():
 
     # Define agents
     flight_assistant = create_react_agent(
-        model="google_genai:gemini-2.5-flash-preview-05-20",
+        model="google_genai:gemini-2.0-flash",
         tools=[book_flight, transfer_to_hotel_assistant],
         name="flight_assistant",
     )
     hotel_assistant = create_react_agent(
-        model="google_genai:gemini-2.5-flash-preview-05-20",
+        model="google_genai:gemini-2.0-flash",
         tools=[book_hotel, transfer_to_flight_assistant],
         name="hotel_assistant",
     )
