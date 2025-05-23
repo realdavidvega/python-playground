@@ -1,5 +1,9 @@
+import uuid
+
+from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import tool
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langgraph.checkpoint.memory import MemorySaver
 from langgraph.prebuilt import create_react_agent
 from langgraph_supervisor import create_supervisor
 
@@ -32,30 +36,36 @@ def main():
     flight_assistant = create_react_agent(
         model="google_genai:gemini-2.0-flash",
         tools=[book_flight],
-        prompt="You are a flight booking assistant",
+        prompt="You are a flight booking assistant, do not call your tools more than once.",
         name="flight_assistant",
     )
 
     hotel_assistant = create_react_agent(
         model="google_genai:gemini-2.0-flash",
         tools=[book_hotel],
-        prompt="You are a hotel booking assistant",
+        prompt="You are a hotel booking assistant, do not call your tools more than once.",
         name="hotel_assistant",
     )
 
+    # create a supervisor (graph), and compile it adding a memory saver so we can continue where we left off
     supervisor = create_supervisor(
         agents=[flight_assistant, hotel_assistant],
         model=ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0),
         prompt=(
             "You manage a hotel booking assistant and a"
             "flight booking assistant. Assign work to them."
-            "Do not call any tool more than once."
+            "Do not call any agent more than once per task."
         ),
-    ).compile()
+    ).compile(checkpointer=MemorySaver())
+
+    # adding a thread id to the config
+    config = RunnableConfig(configurable={"thread_id": uuid.uuid4().hex})
 
     def stream_updates(user_content: str):
         for chunk in supervisor.stream(
-            {"messages": [{"role": "user", "content": user_content}]}
+            {"messages": [{"role": "user", "content": user_content}]},
+            config=config,
+            stream_mode="values"
         ):
             print(f"Output: {chunk}\n")
 
