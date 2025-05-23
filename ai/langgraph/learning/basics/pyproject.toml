@@ -8,6 +8,7 @@ dependencies = [
     "langchain[anthropic,google-genai]>=0.3.25",
     "langgraph>=0.4.5",
     "langgraph-supervisor>=0.0.25",
+    "langgraph-swarm>=0.0.11",
 ]
 
 [dependency-groups]

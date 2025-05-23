@@ -24,3 +24,9 @@ basics-time:
 
 agents-handoffs:
 	uv run python -m src.agents.handoffs.main
+
+agents-supervisor:
+	uv run python -m src.agents.supervisor.main
+
+agents-swarm:
+	uv run python -m src.agents.swarm.main
