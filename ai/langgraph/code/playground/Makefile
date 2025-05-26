@@ -1,8 +1,14 @@
+# GLOBAL
+##########################################################################
+
 lint:
 	uv run ruff format . && uv run ruff check . --fix
 
 sync:
 	uv sync
+
+# BASICS
+##########################################################################
 
 basics-chat:
 	uv run python -m src.basics.chat.main
@@ -22,6 +28,9 @@ basics-state:
 basics-time:
 	uv run python -m src.basics.time.main
 
+# AGENTS
+##########################################################################
+
 agents-handoffs:
 	uv run python -m src.agents.handoffs.main
 
@@ -30,3 +39,9 @@ agents-supervisor:
 
 agents-swarm:
 	uv run python -m src.agents.swarm.main
+
+# EXAMPLES
+##########################################################################
+
+stocks-chatbot:
+	uv run python -m src.examples.stocks_chatbot.main

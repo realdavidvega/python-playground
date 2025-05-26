@@ -4,7 +4,7 @@ from langgraph.graph.state import CompiledStateGraph, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 from typing_extensions import Annotated, TypedDict
 
-from app.resources.resources import Resources
+from src.examples.stocks_chatbot.resources.resources import GraphResources
 
 
 class StockMarketState(TypedDict):
@@ -12,7 +12,7 @@ class StockMarketState(TypedDict):
     favorite_symbol: str
 
 
-def graph(resources: Resources) -> CompiledStateGraph:
+def stocks_graph(resources: GraphResources) -> CompiledStateGraph:
     def __chatbot(graph_state: StockMarketState):
         return {"messages": [resources.chat_model.invoke(graph_state["messages"])]}
 
