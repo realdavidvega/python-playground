@@ -16,7 +16,9 @@ class GraphResources(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
 
-def graph_resources(model: str = "google_genai:gemini-2.0-flash") -> GraphResources:
+def init_graph_resources(
+    model: str = "google_genai:gemini-2.0-flash",
+) -> GraphResources:
     alpha_vantage = AlphaVantageResources(time_series=TimeSeries())
     llm_tools = tools(alpha_vantage)
     llm = init_chat_model(model, temperature=0)

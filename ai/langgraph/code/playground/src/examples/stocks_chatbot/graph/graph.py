@@ -12,7 +12,7 @@ class StockMarketState(TypedDict):
     favorite_symbol: str
 
 
-def stocks_graph(resources: GraphResources) -> CompiledStateGraph:
+def init_stocks_graph(resources: GraphResources) -> CompiledStateGraph:
     def __chatbot(graph_state: StockMarketState):
         return {"messages": [resources.chat_model.invoke(graph_state["messages"])]}
 
