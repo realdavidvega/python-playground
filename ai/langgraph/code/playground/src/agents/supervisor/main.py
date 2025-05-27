@@ -65,7 +65,7 @@ def main():
         for chunk in supervisor.stream(
             {"messages": [{"role": "user", "content": user_content}]},
             config=config,
-            stream_mode="values"
+            stream_mode="values",
         ):
             print(f"Output: {chunk}\n")
 

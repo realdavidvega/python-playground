@@ -4,7 +4,7 @@ from langgraph.prebuilt import InjectedState
 from langgraph.types import Command
 from typing_extensions import Annotated
 
-from app.resources.alpha_vantage import AlphaVantageResources
+from src.examples.stocks_chatbot.resources.alpha_vantage import AlphaVantageResources
 
 
 def tools(alpha_vantage: AlphaVantageResources):
