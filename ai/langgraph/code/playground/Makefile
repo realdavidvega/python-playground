@@ -40,6 +40,12 @@ agents-supervisor:
 agents-swarm:
 	uv run python -m src.agents.swarm.main
 
+agents-retrieval:
+	uv run python -m src.agents.retrieval.main
+
+agents-multiagent:
+	uv run python -m src.agents.multiagent.main
+
 # EXAMPLES
 ##########################################################################
 
