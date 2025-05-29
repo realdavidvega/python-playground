@@ -9,13 +9,13 @@ def build_interest_agent(
     finance: FinanceResources, model: LanguageModelLike, debug: bool = False
 ):
     @tool
-    def get_interest_rate():
-        """Get the current FED interest rate."""
-        return finance.fred.get_series("FEDFUNDS").iloc[-1]
+    def get_interest_rates():
+        """Get the current FED interest rates from last 5 months."""
+        return finance.fred.get_series("FEDFUNDS")[-5:]
 
     return create_react_agent(
         model=model,
-        tools=[get_interest_rate],
+        tools=[get_interest_rates],
         prompt=(
             """
             You are an interest agent that has access to the treasury's current interest rate for a given period.

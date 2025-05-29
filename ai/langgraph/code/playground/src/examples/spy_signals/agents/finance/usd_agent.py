@@ -15,8 +15,10 @@ def build_usd_agent(
             "USD", "EUR"
         )
 
-        print(f"Called get_usd__eur_rate tool: {exchange_rate}")
-        return exchange_rate
+        float_exchange_rate = float(exchange_rate[-1]["5. Exchange Rate"])
+
+        print(f"Called get_usd__eur_rate tool: {float_exchange_rate}")
+        return float_exchange_rate
 
     return create_react_agent(
         model=model,

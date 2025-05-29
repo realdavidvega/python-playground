@@ -14,6 +14,7 @@ dependencies = [
     "langgraph-swarm>=0.0.11",
     "pandas>=2.2.3",
     "tiktoken>=0.9.0",
+    "ta-lib>=0.6.3" # needs ta-lib C library installed on your system
 ]
 
 [dependency-groups]

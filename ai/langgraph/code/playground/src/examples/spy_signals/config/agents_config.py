@@ -15,4 +15,5 @@ class AgentsConfig(BaseModel):
     usd_agent_model: LanguageModelLike = field(default_factory=_default_model)
     spy_agent_model: LanguageModelLike = field(default_factory=_default_model)
     supervisor_model: LanguageModelLike = field(default_factory=_default_model)
+    trading_agent_model: LanguageModelLike = field(default_factory=_default_model)
     model_config = ConfigDict(arbitrary_types_allowed=True)

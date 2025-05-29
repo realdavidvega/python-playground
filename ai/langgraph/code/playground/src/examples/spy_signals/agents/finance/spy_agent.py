@@ -10,11 +10,13 @@ def build_spy_agent(
 ):
     @tool
     def get_daily_data():
-        """Get intraday data for SPY (SPDR S&P 500 ETF)."""
-        daily_data = finance.time_series.get_daily("SPY", outputsize="compact")
+        """Get close price of intraday data for SPY (SPDR S&P 500 ETF)."""
+        daily_data = finance.time_series.get_daily("SPY", outputsize="compact")[0]
+        first_day_key = next(iter(daily_data))
+        close_price = daily_data[first_day_key]["4. close"]
 
-        print(f"Called get_daily_data tool: {daily_data}")
-        return daily_data
+        print(f"Called get_daily_data tool: {close_price}")
+        return close_price
 
     return create_react_agent(
         model=model,
