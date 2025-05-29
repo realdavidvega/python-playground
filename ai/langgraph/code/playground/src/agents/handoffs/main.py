@@ -1,4 +1,3 @@
-from langchain_core.messages import convert_to_messages
 from langchain_core.tools import tool, InjectedToolCallId
 from langgraph.constants import START
 from langgraph.prebuilt import InjectedState, create_react_agent
@@ -6,54 +5,13 @@ from langgraph.graph import MessagesState, StateGraph
 from langgraph.types import Command, Send
 from typing_extensions import Annotated
 
+from src.utils.print_utils import pretty_print_messages
+
 
 # Handoffs
-
 # A single agent might struggle if it needs to specialize in multiple domains or manage many tools.
 # To tackle this, you can break your agent into smaller, independent agents and composing them into a
 # multi-agent system.
-
-
-# We'll use `pretty_print_messages` helper to render the streamed agent outputs nicely later on
-def pretty_print_messages(update, last_message=False):
-    def __pretty_print_message(message, indent=False):
-        pretty_message = message.pretty_repr(html=True)
-        if not indent:
-            print(pretty_message)
-            return
-
-        indented = "\n".join("\t" + c for c in pretty_message.split("\n"))
-        print(indented)
-
-    is_subgraph = False
-    if isinstance(update, tuple):
-        ns, update = update
-        # skip parent graph updates in the printouts
-        if len(ns) == 0:
-            return
-
-        graph_id = ns[-1].split(":")[0]
-        print(f"Update from subgraph {graph_id}:")
-        print("\n")
-        is_subgraph = True
-
-    for node_name, node_update in update.items():
-        update_label = f"Update from node {node_name}:"
-        if is_subgraph:
-            update_label = "\t" + update_label
-
-        print(update_label)
-        print("\n")
-
-        messages = convert_to_messages(node_update["messages"])
-        if last_message:
-            messages = messages[-1:]
-
-        for m in messages:
-            __pretty_print_message(m, indent=is_subgraph)
-        print("\n")
-
-
 # In multi-agent systems, agents need to communicate between each other. They do so via handoffs: a primitive
 # that describes which agent to hand control to and the payload to send to that agent. Handoffs allow you to specify:
 # - destination: target agent to navigate to (e.g., name of the LangGraph node to go to)

@@ -2,8 +2,6 @@
 # This architecture specializes on agents coordinated by a central supervisor agent.
 # The supervisor agent controls all communication flow and task delegation, making decisions about which agent to
 # invoke based on the current context and task requirements.
-import os
-from getpass import getpass
 
 from langchain.chat_models import init_chat_model
 from langchain_core.tools import InjectedToolCallId, tool
@@ -16,13 +14,8 @@ from langgraph.types import Command, Send
 from langgraph_supervisor import create_supervisor
 from typing_extensions import Annotated
 
-from src.agents.handoffs.main import pretty_print_messages
-
-
-# Helper function for setting environment variables
-def _set_if_undefined(var: str):
-    if not os.environ.get(var):
-        os.environ[var] = getpass(f"Please provide your {var}")
+from src.utils.env_utils import set_env_or_prompt
+from src.utils.print_utils import pretty_print_messages
 
 
 # Create worker agents
@@ -398,6 +391,6 @@ def main():
 
 
 if __name__ == "__main__":
-    _set_if_undefined("GOOGLE_API_KEY")
-    _set_if_undefined("TAVILY_API_KEY")
+    set_env_or_prompt("GOOGLE_API_KEY")
+    set_env_or_prompt("TAVILY_API_KEY")
     main()
