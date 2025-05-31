@@ -9,7 +9,7 @@ def build_interest_agent(
     finance: FinanceResources, model: LanguageModelLike, debug: bool = False
 ):
     @tool
-    def get_interest_rates():
+    def get_interest_rates() -> list[float]:
         """Get the current FED interest rates from last 5 months."""
         return finance.fred.get_series("FEDFUNDS")[-5:]
 

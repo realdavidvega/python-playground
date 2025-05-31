@@ -9,16 +9,17 @@ def build_usd_agent(
     finance: FinanceResources, model: LanguageModelLike, debug: bool = False
 ):
     @tool
-    def get_usd__eur_rate():
+    def get_usd__eur_rate() -> list[float]:
         """Get the current USD/EUR rate."""
-        exchange_rate = finance.foreign_exchange.get_currency_exchange_rate(
+        exchange_rate_data = finance.foreign_exchange.get_currency_exchange_rate(
             "USD", "EUR"
         )
 
-        float_exchange_rate = float(exchange_rate[-1]["5. Exchange Rate"])
+        # get last 5 exchange rates
+        exchange_rates = [rate["5. Exchange Rate"] for rate in exchange_rate_data[-5:]]
 
-        print(f"Called get_usd__eur_rate tool: {float_exchange_rate}")
-        return float_exchange_rate
+        print(f"Called get_usd__eur_rate tool: {exchange_rates}")
+        return exchange_rates
 
     return create_react_agent(
         model=model,

@@ -10,7 +10,7 @@ def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> Compil
     @tool
     def generate_trading_signal(
         spy_daily: float,
-        usd_eur_rate: float,
+        usd_eur_rates: list[float],
         interest_rates: list[float],
     ) -> str:
         """
@@ -18,12 +18,14 @@ def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> Compil
         Returns 'buy', 'sell', or 'hold'.
         """
 
+        print(f"Called generate_trading_signal tool: {spy_daily}, {usd_eur_rates}, {interest_rates}")
+
         # Create DataFrame with required features
         df = pd.DataFrame(
             [
                 {
                     "spy": spy_daily,
-                    "usd_eur": usd_eur_rate,
+                    "usd_eur_rates": usd_eur_rates,
                     "interest_rates": interest_rates,
                 }
             ]
@@ -36,42 +38,16 @@ def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> Compil
         macd, macd_signal, _ = talib.MACD(df["spy"])
         df["MACD_Hist"] = macd - macd_signal
 
-        # Macro Trends (5-day window)
-        latest = df.iloc[-1]
-        rate_trend = (latest["interest_rates"] - 3) / df["interest_rate"].iloc[4]
-        usd_eur_trend = (latest["usd_eur"] - df["usd_eur"].iloc[-5]) / df[
-            "usd_eur"
-        ].iloc[-5]
+        # WIP logic
 
-        # Signal Conditions
-        buy_conditions = [
-            latest["RSI"] < 35,
-            latest["MA50"] > latest["MA200"],
-            latest["MACD_Hist"] > 0,
-            rate_trend < -0.02,  # 2% rate decrease
-            usd_eur_trend < -0.01,  # USD weakening vs EUR
-        ]
-
-        sell_conditions = [
-            latest["RSI"] > 65,
-            latest["MA50"] < latest["MA200"],
-            latest["MACD_Hist"] < 0,
-            rate_trend > 0.02,  # 2% rate increase
-            usd_eur_trend > 0.01,  # USD strengthening
-        ]
-
-        if sum(buy_conditions) >= 4:
-            return "buy"
-        elif sum(sell_conditions) >= 4:
-            return "sell"
-        return "hold"
+        return "buy"
 
     return create_react_agent(
         model=model,
         tools=[generate_trading_signal],
         prompt=(
             """
-            You are a trading agent that generates trading signals based on daily price data, USD/EUR rate, and current interest rate.
+            You are a trading agent that generates trading signals based on daily price data, USD/EUR rates, and current interest rates.
             INSTRUCTIONS:
             - Assist ONLY with trading signals, do not perform calculations or use technical analysis
             - Be very detailed, even verbose, and not ambiguous in your queries

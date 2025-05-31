@@ -60,9 +60,9 @@ def main():
     )
 
     # Test the USD agent
-    # for event in usd_agent.stream(
-    #     input={"messages": [{"role": "user", "content": "What is the current USD/EUR rate?"}]}
-    # ): pretty_print_messages(event, last_message=True)
+    for event in usd_agent.stream(
+        input={"messages": [{"role": "user", "content": "What is the current USD/EUR rate?"}]}
+    ): pretty_print_messages(event, last_message=True)
 
     interest_agent = build_interest_agent(
         finance=finance_resources,
@@ -100,17 +100,17 @@ def main():
     )
 
     # Test the trading agent
-    for event in trading_agent.stream(
-        input={
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "If the current interest rate were (4.48 last month, 4.33 the previous 4 months), the current USD/EUR rate is 0.88, and the current SP500 price is 587.73, what should I do?",
-                }
-            ]
-        }
-    ):
-        pretty_print_messages(event, last_message=True)
+    # for event in trading_agent.stream(
+    #     input={
+    #         "messages": [
+    #             {
+    #                 "role": "user",
+    #                 "content": "If the current interest rate were (4.48 last month, 4.33 the previous 4 months), the current USD/EUR rate is 0.88, and the current SP500 price is 587.73, what should I do?",
+    #             }
+    #         ]
+    #     }
+    # ):
+    #     pretty_print_messages(event, last_message=True)
 
     # runnable_config = RunnableConfig(configurable={"thread_id": uuid.uuid4().hex})
     # __init_chat(finance_supervisor, runnable_config)
