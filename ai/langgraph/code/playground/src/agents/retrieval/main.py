@@ -1,6 +1,3 @@
-import getpass
-import os
-
 from langchain_core.messages import convert_to_messages
 from langgraph.constants import START, END
 from langgraph.prebuilt import ToolNode, tools_condition
@@ -16,6 +13,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import MessagesState, StateGraph
 from pydantic import BaseModel, Field
 
+from src.utils.env_utils import set_env_or_prompt
+
 
 # Agentic RAG
 # Retrieval agents are useful when you want an LLM to make a decision about whether to retrieve context from a
@@ -23,12 +22,6 @@ from pydantic import BaseModel, Field
 # - Fetch and preprocess documents that will be used for retrieval.
 # - Index those documents for semantic search and create a retriever tool for the agent.
 # - Build an agentic RAG system that can decide when to use the retriever tool.
-
-
-# Helper function for setting environment variables
-def _set_env(key: str):
-    if key not in os.environ:
-        os.environ[key] = getpass.getpass(f"{key}:")
 
 
 # Preprocess documents to use in our RAG system
@@ -396,5 +389,5 @@ def main():
 
 
 if __name__ == "__main__":
-    _set_env("GOOGLE_API_KEY")
+    set_env_or_prompt("GOOGLE_API_KEY")
     main()
