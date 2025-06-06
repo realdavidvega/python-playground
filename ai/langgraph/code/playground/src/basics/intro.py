@@ -1,22 +1,16 @@
-
 # Recap of Python concepts used in langgraph
 
 if __name__ == "__main__":
     # Dict
     # key-value pairs
-    person_dict = {
-        "name": "John Doe",
-        "age": 30,
-        "city": "New York"
-    }
+    person_dict = {"name": "John Doe", "age": 30, "city": "New York"}
 
     # TypedDict
     # type safety and enhanced readability
     from typing import TypedDict, ReadOnly
 
-
     class Person(TypedDict):
-        name: ReadOnly[str] # readonly field
+        name: ReadOnly[str]  # readonly field
         age: int
         weight: float
         height: float
@@ -27,7 +21,7 @@ if __name__ == "__main__":
         "age": 30,
         "weight": 70.5,
         "height": 177.8,
-        "city": "New York"
+        "city": "New York",
     }
 
     print(f"Person name is {person_typed['name']}\n")
@@ -38,10 +32,10 @@ if __name__ == "__main__":
     from typing import Union
 
     def get_imc(weight: Union[float, int], height: Union[float, int]):
-        return weight / (height ** 2)
+        return weight / (height**2)
 
-    imc_float = get_imc(70.5, 177.8) # ok
-    imc_int = get_imc(70, 177) # ok
+    imc_float = get_imc(70.5, 177.8)  # ok
+    imc_int = get_imc(70, 177)  # ok
     # imc = get_imc("70", "177.8") # error
 
     # Optional
@@ -50,9 +44,11 @@ if __name__ == "__main__":
 
     def print_person(person: Optional[Person]) -> None:
         if person is not None:
-            print(f"Hello {person['name']}, you currently weight {person['weight']}kg and are {person['height']}cm tall\n")
+            print(
+                f"Hello {person['name']}, you currently weight {person['weight']}kg and are {person['height']}cm tall\n"
+            )
         else:
-            print(f"Hello, how can I help you?\n")
+            print("Hello, how can I help you?\n")
 
     print_person(person_typed)
 
@@ -67,7 +63,7 @@ if __name__ == "__main__":
 
     # Lambda functions
     # to create anonymous functions, inline functions, higher-order functions, closures, etc.
-    imc_lambda = lambda weight, height: weight / (height ** 2)
+    imc_lambda = lambda weight, height: weight / (height**2)
     print(f"My IMC is {imc_lambda(70.5, 177.8)}\n")
 
     weights = [70.2, 69.5, 67.1]

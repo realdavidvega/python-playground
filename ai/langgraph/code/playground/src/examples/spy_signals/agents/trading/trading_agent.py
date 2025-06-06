@@ -18,7 +18,9 @@ def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> Compil
         Returns 'buy', 'sell', or 'hold'.
         """
 
-        print(f"Called generate_trading_signal tool: {spy_daily}, {usd_eur_rates}, {interest_rates}")
+        print(
+            f"Called generate_trading_signal tool: {spy_daily}, {usd_eur_rates}, {interest_rates}"
+        )
 
         # Create DataFrame with required features
         df = pd.DataFrame(
@@ -38,9 +40,7 @@ def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> Compil
         macd, macd_signal, _ = talib.MACD(df["spy"])
         df["MACD_Hist"] = macd - macd_signal
 
-        # WIP logic
-
-        return "buy"
+        return "hold"
 
     return create_react_agent(
         model=model,

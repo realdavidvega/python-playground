@@ -61,8 +61,13 @@ def main():
 
     # Test the USD agent
     for event in usd_agent.stream(
-        input={"messages": [{"role": "user", "content": "What is the current USD/EUR rate?"}]}
-    ): pretty_print_messages(event, last_message=True)
+        input={
+            "messages": [
+                {"role": "user", "content": "What is the current USD/EUR rate?"}
+            ]
+        }
+    ):
+        pretty_print_messages(event, last_message=True)
 
     interest_agent = build_interest_agent(
         finance=finance_resources,

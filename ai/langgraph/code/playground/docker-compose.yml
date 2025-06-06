@@ -1,0 +1,12 @@
+services:
+  github_mcp:
+    image: supercorp/supergateway
+    restart: unless-stopped
+    command: >
+      --stdio "npx -y @modelcontextprotocol/server-github"
+      --port 8001
+    environment:
+      - GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_PASSWORD}
+      - GITHUB_TOOLSETS=all
+    ports:
+      - "8001:8001"

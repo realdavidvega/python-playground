@@ -1,5 +1,5 @@
 from alpha_vantage.timeseries import TimeSeries
-from pydantic import BaseModel, ConfigDict
+from pydantic import ConfigDict
 from pydantic.dataclasses import dataclass
 
 
