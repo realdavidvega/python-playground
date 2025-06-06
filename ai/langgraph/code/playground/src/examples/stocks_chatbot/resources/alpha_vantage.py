@@ -1,7 +1,8 @@
 from alpha_vantage.timeseries import TimeSeries
 from pydantic import BaseModel, ConfigDict
+from pydantic.dataclasses import dataclass
 
 
-class AlphaVantageResources(BaseModel):
+@dataclass(config=ConfigDict(arbitrary_types_allowed=True, frozen=True))
+class AlphaVantageResources:
     time_series: TimeSeries
-    model_config = ConfigDict(arbitrary_types_allowed=True)
