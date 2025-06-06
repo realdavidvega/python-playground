@@ -2,18 +2,19 @@ from alpha_vantage.timeseries import TimeSeries
 from langchain.chat_models import init_chat_model
 from langchain_core.runnables import Runnable
 from langgraph.checkpoint.memory import MemorySaver
-from pydantic import BaseModel, ConfigDict
+from pydantic import ConfigDict
+from pydantic.dataclasses import dataclass
 from typing_extensions import Callable
 
 from src.examples.stocks_chatbot.graph.tools import tools
 from src.examples.stocks_chatbot.resources.alpha_vantage import AlphaVantageResources
 
 
-class GraphResources(BaseModel):
+@dataclass(config=ConfigDict(arbitrary_types_allowed=True, frozen=True))
+class GraphResources:
     chat_model: Runnable
     memory: MemorySaver
     tools: list[Callable]
-    model_config = ConfigDict(arbitrary_types_allowed=True)
 
 
 def init_graph_resources(

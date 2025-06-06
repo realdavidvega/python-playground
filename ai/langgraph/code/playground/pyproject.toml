@@ -13,8 +13,10 @@ dependencies = [
     "langgraph-supervisor>=0.0.25",
     "langgraph-swarm>=0.0.11",
     "pandas>=2.2.3",
-    "tiktoken>=0.9.0",
-    "ta-lib>=0.6.3" # needs ta-lib C library installed on your system
+    "tiktoken>=0.9.0", # needs ta-lib C library installed on your system
+    "ta-lib>=0.6.3",
+    "langchain-mcp-adapters>=0.1.7",
+    "mcp>=1.9.3",
 ]
 
 [dependency-groups]
