@@ -23,6 +23,11 @@ async def main():
                 "url": "http://localhost:8000/mcp",
                 "transport": "streamable_http",
             },
+            "time": {
+                "command": "python",
+                "args": ["-m", "mcp_server_time", "--local-timezone=UTC"],
+                "transport": "stdio",
+            },
         }
     )
 
@@ -42,8 +47,13 @@ async def main():
         {"messages": [{"role": "user", "content": "what is the weather in NYC?"}]}
     )
 
+    time_response = await agent.ainvoke(
+        {"messages": [{"role": "user", "content": "what the time in NYC?"}]}
+    )
+
     print(math_response["messages"][-1].content)
     print(weather_response["messages"][-1].content)
+    print(time_response["messages"][-1].content)
 
 
 if __name__ == "__main__":

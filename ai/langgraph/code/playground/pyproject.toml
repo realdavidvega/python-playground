@@ -17,6 +17,7 @@ dependencies = [
     "ta-lib>=0.6.4",
     "langchain-mcp-adapters>=0.1.7",
     "mcp>=1.9.3",
+    "mcp-server-time>=0.6.2",
 ]
 
 [dependency-groups]
@@ -25,5 +26,8 @@ dev = [
     "ty>=0.0.1a8",
 ]
 
+[tool.ruff]
+exclude = [".venv", "__pycache__"]
+
 [tool.ty.src]
-root = "./"
+root = "."

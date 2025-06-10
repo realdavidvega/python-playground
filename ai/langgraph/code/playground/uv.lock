@@ -701,6 +701,7 @@ dependencies = [
     { name = "langgraph-supervisor" },
     { name = "langgraph-swarm" },
     { name = "mcp" },
+    { name = "mcp-server-time" },
     { name = "pandas" },
     { name = "ta-lib" },
     { name = "tiktoken" },
@@ -724,6 +725,7 @@ requires-dist = [
     { name = "langgraph-supervisor", specifier = ">=0.0.27" },
     { name = "langgraph-swarm", specifier = ">=0.0.11" },
     { name = "mcp", specifier = ">=1.9.3" },
+    { name = "mcp-server-time", specifier = ">=0.6.2" },
     { name = "pandas", specifier = ">=2.3.0" },
     { name = "ta-lib", specifier = ">=0.6.4" },
     { name = "tiktoken", specifier = ">=0.9.0" },
@@ -836,6 +838,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f2/df/8fefc0c6c7a5c66914763e3ff3893f9a03435628f6625d5e3b0dc45d73db/mcp-1.9.3.tar.gz", hash = "sha256:587ba38448e81885e5d1b84055cfcc0ca56d35cd0c58f50941cab01109405388", size = 333045, upload-time = "2025-06-05T15:48:25.681Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/79/45/823ad05504bea55cb0feb7470387f151252127ad5c72f8882e8fe6cf5c0e/mcp-1.9.3-py3-none-any.whl", hash = "sha256:69b0136d1ac9927402ed4cf221d4b8ff875e7132b0b06edd446448766f34f9b9", size = 131063, upload-time = "2025-06-05T15:48:24.171Z" },
+]
+
+[[package]]
+name = "mcp-server-time"
+version = "0.6.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "mcp" },
+    { name = "pydantic" },
+    { name = "tzdata" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/76/65/6f4ac2df4dbed45e2606ceb8d05d2d63f3d1a4a6982babf37059683c88d0/mcp_server_time-0.6.2.tar.gz", hash = "sha256:f8baddaf4787a4ccf8bb585fa936e3537692dd9a24ac2bbe5d2616014f08a6b2", size = 26714, upload-time = "2024-12-04T16:10:18.275Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f6/71/e5b546bbe8769be4608728624ad4c4c51c93243a124e527b39465bcf559e/mcp_server_time-0.6.2-py3-none-any.whl", hash = "sha256:6b67640eb9df3df834b3de5001e37ca8b0c997ce700b014882b585964094d116", size = 5693, upload-time = "2024-12-04T16:10:16.487Z" },
 ]
 
 [[package]]
