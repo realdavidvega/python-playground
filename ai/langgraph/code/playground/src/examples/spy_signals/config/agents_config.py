@@ -13,8 +13,9 @@ def _default_model():
 @dataclass(config=ConfigDict(arbitrary_types_allowed=True, frozen=True))
 class AgentsConfig:
     debug: bool = False
+    mocked: bool = False
     interest_agent_model: LanguageModelLike = field(default_factory=_default_model)
     usd_agent_model: LanguageModelLike = field(default_factory=_default_model)
     spy_agent_model: LanguageModelLike = field(default_factory=_default_model)
-    supervisor_model: LanguageModelLike = field(default_factory=_default_model)
     trading_agent_model: LanguageModelLike = field(default_factory=_default_model)
+    supervisor_model: LanguageModelLike = field(default_factory=_default_model)

@@ -16,13 +16,13 @@ if __name__ == "__main__":
         height: float
         city: str
 
-    person_typed: Person = {
-        "name": "John Doe",
-        "age": 30,
-        "weight": 70.5,
-        "height": 177.8,
-        "city": "New York",
-    }
+    person_typed: Person = Person(
+        name="John Doe",
+        age=30,
+        weight=70.5,
+        height=177.8,
+        city="New York",
+    )
 
     print(f"Person name is {person_typed['name']}\n")
 
@@ -64,8 +64,7 @@ if __name__ == "__main__":
     # Lambda functions
     # to create anonymous functions, inline functions, higher-order functions, closures, etc.
 
-    # ruff: noqa: E731
-    imc_lambda = lambda weight, height: weight / (height**2)
+    imc_lambda = lambda weight, height: weight / (height**2)  # noqa: E731
     print(f"My IMC is {imc_lambda(70.5, 177.8)}\n")
 
     weights = [70.2, 69.5, 67.1]

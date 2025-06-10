@@ -6,20 +6,49 @@ from src.examples.spy_signals.resources.finance_resources import FinanceResource
 
 
 def build_usd_agent(
-    finance: FinanceResources, model: LanguageModelLike, debug: bool = False
+    finance: FinanceResources,
+    model: LanguageModelLike,
+    debug: bool = False,
+    mocked: bool = False,
 ):
     @tool
     def get_usd__eur_rate() -> list[float]:
-        """Get the current USD/EUR rate."""
-        exchange_rate_data = finance.foreign_exchange.get_currency_exchange_rate(
-            "USD", "EUR"
-        )
+        """Get the current USD/EUR rate from last 20 days."""
+        if mocked:
+            return [
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.90,
+                0.89,
+                0.88,
+                0.87,
+                0.86,
+                0.85,
+                0.84,
+            ]
+        else:
+            exchange_rate_data = finance.foreign_exchange.get_currency_exchange_rate(
+                "USD", "EUR"
+            )
 
-        # get last 5 exchange rates
-        exchange_rates = [rate["5. Exchange Rate"] for rate in exchange_rate_data[-5:]]
+            # get last 20 exchange rates
+            exchange_rates = [
+                rate["5. Exchange Rate"] for rate in exchange_rate_data[:-20]
+            ]
 
-        print(f"Called get_usd__eur_rate tool: {exchange_rates}")
-        return exchange_rates
+            print(f"Called get_usd__eur_rate tool: {exchange_rates}")
+            return exchange_rates
 
     return create_react_agent(
         model=model,

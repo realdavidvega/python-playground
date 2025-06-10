@@ -15,7 +15,7 @@ def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> Compil
     ) -> str:
         """
         Generates SPY trading signals using daily price data, USD/EUR rate, and current interest rate.
-        Each list contains the last 20 days of data.
+        Each list contains the last 20 entries of data.
         Returns 'buy', 'sell', or 'hold'.
         """
 
