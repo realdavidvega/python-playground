@@ -10,11 +10,12 @@ from langgraph.constants import START, END
 from langgraph.graph import MessagesState, StateGraph
 from langgraph.graph.graph import CompiledGraph
 from langgraph.prebuilt import create_react_agent, InjectedState
+from langgraph.pregel import Pregel
 from langgraph.types import Command, Send
 from langgraph_supervisor import create_supervisor
 from typing_extensions import Annotated
 
-from src.utils.env_utils import set_env_or_prompt
+from src.utils.env_utils import set_env
 from src.utils.print_utils import pretty_print_messages
 
 
@@ -73,7 +74,7 @@ def _create_math_agent(model: str) -> CompiledGraph:
 
 # Create supervisor with langgraph-supervisor
 # To implement out multi-agent system, we will use create_supervisor from the prebuilt langgraph-supervisor library
-def _create_supervisor(model: str, agents: list[CompiledGraph]) -> CompiledGraph:
+def _create_supervisor(model: str, agents: list[Pregel]) -> CompiledGraph:
     return create_supervisor(
         model=init_chat_model(model=model, temperature=0),
         agents=agents,
@@ -127,7 +128,7 @@ def _run_multi_agent_supervisor(model: str):
 
             # Pass the full message history to the worker agent
             return Command(
-                goto=agent_name,
+                goto=Send(agent_name, state),
                 update={**state, "messages": state["messages"] + [tool_message]},
                 graph=Command.PARENT,
             )
@@ -391,6 +392,6 @@ def main():
 
 
 if __name__ == "__main__":
-    set_env_or_prompt("GOOGLE_API_KEY")
-    set_env_or_prompt("TAVILY_API_KEY")
+    set_env("GOOGLE_API_KEY")
+    set_env("TAVILY_API_KEY")
     main()

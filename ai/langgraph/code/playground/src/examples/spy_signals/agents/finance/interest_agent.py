@@ -6,12 +6,39 @@ from src.examples.spy_signals.resources.finance_resources import FinanceResource
 
 
 def build_interest_agent(
-    finance: FinanceResources, model: LanguageModelLike, debug: bool = False
+    finance: FinanceResources,
+    model: LanguageModelLike,
+    debug: bool = False,
+    mocked: bool = False,
 ):
     @tool
     def get_interest_rates() -> list[float]:
-        """Get the current FED interest rates from last 5 months."""
-        return finance.fred.get_series("FEDFUNDS")[-5:]
+        """Get the current FED interest rates from last 20 months."""
+        if mocked:
+            return [
+                4.5,
+                4.5,
+                4.5,
+                4.5,
+                4.5,
+                4.4,
+                4.3,
+                4.2,
+                4.1,
+                4.0,
+                3.9,
+                3.8,
+                3.7,
+                3.6,
+                3.5,
+                3.4,
+                3.3,
+                3.2,
+                3.1,
+                2.9,
+            ]
+        else:
+            return finance.fred.get_series("FEDFUNDS")[-5:]
 
     return create_react_agent(
         model=model,

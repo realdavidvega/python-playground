@@ -13,7 +13,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import MessagesState, StateGraph
 from pydantic import BaseModel, Field
 
-from src.utils.env_utils import set_env_or_prompt
+from src.utils.env_utils import set_env
 
 
 # Agentic RAG
@@ -121,7 +121,8 @@ def _grade_documents(
     response = grader_model.with_structured_output(GradeDocuments).invoke(
         [{"role": "user", "content": prompt}]
     )
-    score = response.binary_score
+
+    score = response["binary_score"]
 
     if score == "yes":
         return "generate_answer"
@@ -389,5 +390,5 @@ def main():
 
 
 if __name__ == "__main__":
-    set_env_or_prompt("GOOGLE_API_KEY")
+    set_env("GOOGLE_API_KEY")
     main()

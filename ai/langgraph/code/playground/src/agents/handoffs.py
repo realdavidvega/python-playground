@@ -1,3 +1,4 @@
+from langchain_core.runnables import Runnable
 from langchain_core.tools import tool, InjectedToolCallId
 from langgraph.constants import START
 from langgraph.prebuilt import InjectedState, create_react_agent
@@ -32,7 +33,7 @@ def create_handoff_tool(*, agent_name: str, description: str | None = None):
             "tool_call_id": tool_call_id,
         }
         return Command(
-            goto=agent_name,
+            goto=Send(agent_name, state),
             update={"messages": state["messages"] + [tool_message]},
             graph=Command.PARENT,
         )
@@ -57,7 +58,7 @@ def __call_tools(state):
 # - each agent outputs its internal messages history to the overall message history of the multi-agent system.
 # If you want more control over how agent outputs are added, wrap the agent in a separate node function:
 def __call_hotel_assistant(state):
-    hotel_assistant = {}
+    hotel_assistant = Runnable()
     # return agent's final response,
     # excluding inner monologue
     response = hotel_assistant.invoke(state)
