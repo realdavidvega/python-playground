@@ -63,6 +63,8 @@ if __name__ == "__main__":
 
     # Lambda functions
     # to create anonymous functions, inline functions, higher-order functions, closures, etc.
+
+    # ruff: noqa: E731
     imc_lambda = lambda weight, height: weight / (height**2)
     print(f"My IMC is {imc_lambda(70.5, 177.8)}\n")
 

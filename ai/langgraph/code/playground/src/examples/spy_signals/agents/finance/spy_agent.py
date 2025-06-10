@@ -9,12 +9,21 @@ def build_spy_agent(
     finance: FinanceResources, model: LanguageModelLike, debug: bool = False
 ):
     @tool
-    def get_daily_data() -> float:
-        """Get close price of intraday data for SPY (SPDR S&P 500 ETF)."""
-        daily_data = finance.time_series.get_daily("SPY", outputsize="compact")[0]
-        first_day_key = next(iter(daily_data))
-        close_price = float(daily_data[first_day_key]["4. close"])
+    def get_daily_data() -> list[float]:
+        """Get a list with last 100 close prices from intraday data for SPY (SPDR S&P 500 ETF)."""
+        stock_data = finance.time_series.get_daily("SPY", outputsize="compact")[0]
+        close_prices = [float(stock_data[date]["4. close"]) for date in stock_data][
+            -50:
+        ]
+        print("Called get_daily_data tool")
+        return close_prices
 
+    @tool
+    def get_current_price() -> float:
+        """Get close price from intraday data for SPY (SPDR S&P 500 ETF)."""
+        stock_data = finance.time_series.get_daily("SPY", outputsize="compact")[0]
+        first_day_key = next(iter(stock_data))
+        close_price = float(stock_data[first_day_key]["4. close"])
         print(f"Called get_daily_data tool: {close_price}")
         return close_price
 
