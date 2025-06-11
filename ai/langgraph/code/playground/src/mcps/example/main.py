@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.prebuilt import create_react_agent
@@ -11,12 +12,15 @@ from langgraph.prebuilt import create_react_agent
 # To create your own MCP servers, you can use the mcp library.
 # This library provides a simple way to define tools and run them as servers.
 async def main():
+    # Get the project root directory
+    project_root = os.path.dirname(os.path.abspath(__file__))
+
     # Initialize a MultiServerMCPClient with MCP servers connections.
     client = MultiServerMCPClient(
         {
             "math": {
                 "command": "python",
-                "args": ["math_server.py"],
+                "args": [os.path.join(project_root, "math_server.py")],
                 "transport": "stdio",
             },
             "weather": {
