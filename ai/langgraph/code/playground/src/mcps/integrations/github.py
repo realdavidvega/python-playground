@@ -1,6 +1,7 @@
 import asyncio
 
 from langchain_mcp_adapters.client import MultiServerMCPClient
+from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.prebuilt import create_react_agent
 
 
@@ -14,21 +15,26 @@ async def main():
         }
     )
 
-    tools = await client.get_tools()
-    agent = create_react_agent("google_genai:gemini-2.0-flash", tools)
+    # Different approach, opening a session for each MCP instead
+    async with client.session("github") as session:
+        # Load tools
+        tools = await load_mcp_tools(session)
 
-    github_response = await agent.ainvoke(
-        {
-            "messages": [
-                {
-                    "role": "user",
-                    "content": "what was the last pull request in realdavidvega/python-playground?",
-                }
-            ]
-        }
-    )
+        # Create agent as usual
+        agent = create_react_agent("google_genai:gemini-2.0-flash", tools)
 
-    print(github_response["messages"][-1].content)
+        github_response = await agent.ainvoke(
+            {
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": "what was the last pull request in realdavidvega/python-playground?",
+                    }
+                ]
+            }
+        )
+
+        print(github_response["messages"][-1].content)
 
 
 if __name__ == "__main__":
