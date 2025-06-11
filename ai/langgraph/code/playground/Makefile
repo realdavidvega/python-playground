@@ -1,10 +1,18 @@
 # GLOBAL
 ##########################################################################
 
-lint:
-	uv run ruff format . && uv run ruff check . --fix
+CHECK_DIRS := .
 
 check:
+	uv run ty check
+	uv run ruff check $(CHECK_DIRS)
+
+format:
+	uv run ruff format $(CHECK_DIRS)
+
+fixes:
+	uv run ruff format $(CHECK_DIRS)
+	uv run ruff check --select I --fix
 	uv run ty check
 
 sync:

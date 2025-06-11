@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     # TypedDict
     # type safety and enhanced readability
-    from typing import TypedDict, ReadOnly
+    from typing import ReadOnly, TypedDict
 
     class Person(TypedDict):
         name: ReadOnly[str]  # readonly field

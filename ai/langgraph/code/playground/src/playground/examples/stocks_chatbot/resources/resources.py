@@ -6,8 +6,10 @@ from pydantic import ConfigDict
 from pydantic.dataclasses import dataclass
 from typing_extensions import Callable
 
-from examples.stocks_chatbot.graph.tools import tools
-from examples.stocks_chatbot.resources.alpha_vantage import AlphaVantageResources
+from playground.examples.stocks_chatbot.graph.tools import tools
+from playground.examples.stocks_chatbot.resources.alpha_vantage import (
+    AlphaVantageResources,
+)
 
 
 @dataclass(config=ConfigDict(arbitrary_types_allowed=True, frozen=True))

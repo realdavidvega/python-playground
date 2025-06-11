@@ -6,17 +6,23 @@ from fredapi import Fred
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.state import CompiledStateGraph
 
-from examples.spy_signals.agents.finance.finance_supervisor import (
+from playground.examples.spy_signals.agents.finance.finance_supervisor import (
     build_finance_supervisor,
 )
-from examples.spy_signals.agents.finance.interest_agent import build_interest_agent
-from examples.spy_signals.agents.finance.spy_agent import build_spy_agent
-from examples.spy_signals.agents.finance.usd_agent import build_usd_agent
-from examples.spy_signals.agents.signal_supervisor import build_signal_supervisor
-from examples.spy_signals.agents.trading.trading_agent import build_trading_agent
-from examples.spy_signals.config.agents_config import AgentsConfig
-from examples.spy_signals.resources.finance_resources import FinanceResources
-from utils.env_utils import set_env
+from playground.examples.spy_signals.agents.finance.interest_agent import (
+    build_interest_agent,
+)
+from playground.examples.spy_signals.agents.finance.spy_agent import build_spy_agent
+from playground.examples.spy_signals.agents.finance.usd_agent import build_usd_agent
+from playground.examples.spy_signals.agents.signal_supervisor import (
+    build_signal_supervisor,
+)
+from playground.examples.spy_signals.agents.trading.trading_agent import (
+    build_trading_agent,
+)
+from playground.examples.spy_signals.config.agents_config import AgentsConfig
+from playground.examples.spy_signals.resources.finance_resources import FinanceResources
+from playground.utils.env_utils import set_env
 
 
 def __init_chat(stocks_graph: CompiledStateGraph, graph_config: RunnableConfig):

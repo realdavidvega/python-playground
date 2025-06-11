@@ -1,12 +1,11 @@
-from langchain_core.runnables import RunnableConfig
-from langgraph.checkpoint.memory import MemorySaver
-
 from langchain.chat_models import init_chat_model
+from langchain_core.runnables import RunnableConfig
 from langchain_tavily import TavilySearch
+from langgraph.checkpoint.memory import MemorySaver
 from langgraph.constants import START
-from langgraph.graph import add_messages, StateGraph
+from langgraph.graph import StateGraph, add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
-from typing_extensions import TypedDict, Annotated
+from typing_extensions import Annotated, TypedDict
 
 # 3. Add memory
 # The chatbot can now use tools to answer user questions, but it does not remember the context of previous

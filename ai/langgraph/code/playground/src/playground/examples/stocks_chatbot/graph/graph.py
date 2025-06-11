@@ -4,7 +4,7 @@ from langgraph.graph.state import CompiledStateGraph, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 from typing_extensions import Annotated, TypedDict
 
-from examples.stocks_chatbot.resources.resources import GraphResources
+from playground.examples.stocks_chatbot.resources.resources import GraphResources
 
 
 class StockMarketState(TypedDict):

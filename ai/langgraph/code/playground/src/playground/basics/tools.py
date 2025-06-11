@@ -3,10 +3,10 @@ import json
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import ToolMessage
 from langchain_tavily import TavilySearch
-from langgraph.constants import START, END
-from langgraph.graph import add_messages, StateGraph
+from langgraph.constants import END, START
+from langgraph.graph import StateGraph, add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
-from typing_extensions import TypedDict, Annotated
+from typing_extensions import Annotated, TypedDict
 
 # 2. Add tools
 # To handle queries you chatbot can't answer "from memory", integrate a web search tool.

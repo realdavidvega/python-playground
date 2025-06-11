@@ -1,10 +1,12 @@
 from langchain_core.messages import ToolMessage
-from langchain_core.tools import tool, InjectedToolCallId
+from langchain_core.tools import InjectedToolCallId, tool
 from langgraph.prebuilt import InjectedState
 from langgraph.types import Command
 from typing_extensions import Annotated
 
-from examples.stocks_chatbot.resources.alpha_vantage import AlphaVantageResources
+from playground.examples.stocks_chatbot.resources.alpha_vantage import (
+    AlphaVantageResources,
+)
 
 
 def tools(alpha_vantage: AlphaVantageResources):
