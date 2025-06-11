@@ -64,3 +64,5 @@ mcp-github:
 stocks-chatbot:
 	uv run python -m src.examples.stocks_chatbot.main
 
+spy-signals:
+	uv run python -m src.examples.spy_signals.main

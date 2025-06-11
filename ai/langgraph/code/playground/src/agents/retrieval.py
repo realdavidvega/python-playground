@@ -13,7 +13,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import MessagesState, StateGraph
 from pydantic import BaseModel, Field
 
-from src.utils.env_utils import set_env
+from utils.env_utils import set_env
 
 
 # Agentic RAG

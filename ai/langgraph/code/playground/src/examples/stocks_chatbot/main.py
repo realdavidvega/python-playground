@@ -3,8 +3,8 @@ import uuid
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.state import CompiledStateGraph
 
-from src.examples.stocks_chatbot.graph.graph import init_stocks_graph
-from src.examples.stocks_chatbot.resources.resources import init_graph_resources
+from examples.stocks_chatbot.graph.graph import init_stocks_graph
+from examples.stocks_chatbot.resources.resources import init_graph_resources
 
 
 def __init_chat(stocks_graph: CompiledStateGraph, graph_config: RunnableConfig):

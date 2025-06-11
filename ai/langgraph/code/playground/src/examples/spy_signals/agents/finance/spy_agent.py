@@ -2,7 +2,7 @@ from langchain_core.language_models import LanguageModelLike
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
 
-from src.examples.spy_signals.resources.finance_resources import FinanceResources
+from examples.spy_signals.resources.finance_resources import FinanceResources
 
 
 def build_spy_agent(
