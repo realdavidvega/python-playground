@@ -18,6 +18,19 @@ fixes:
 sync:
 	uv sync
 
+# INFRA
+##########################################################################
+
+infra-up:
+	@if ! docker compose -p py-playground up --remove-orphans --wait; then \
+        		echo "Failed to start containers"; \
+        		docker compose -p py-playground logs; \
+        		exit 1; \
+    	fi
+
+infra-down:
+	docker-compose -p py-playground down
+
 # BASICS
 ##########################################################################
 
