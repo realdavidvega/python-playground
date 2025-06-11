@@ -1,7 +1,7 @@
 from langchain.chat_models import init_chat_model
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_core.documents import Document
-from langchain_core.messages import convert_to_messages
+from langchain_core.messages import BaseMessage, convert_to_messages
 from langchain_core.tools import Tool, create_retriever_tool
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -120,7 +120,10 @@ def _grade_documents(
         [{"role": "user", "content": prompt}]
     )
 
-    score = response["binary_score"]
+    if isinstance(response, dict):
+        score = response["binary_score"]
+    else:
+        score = None
 
     if score == "yes":
         return "generate_answer"
@@ -383,7 +386,13 @@ def main():
     ):
         for node, update in chunk.items():
             print("Update from node", node)
-            update["messages"][-1].pretty_print()
+            message = update["messages"][-1]
+
+            if isinstance(message, BaseMessage):
+                message.pretty_print()
+            else:
+                print(message)
+
             print("\n\n")
 
 
