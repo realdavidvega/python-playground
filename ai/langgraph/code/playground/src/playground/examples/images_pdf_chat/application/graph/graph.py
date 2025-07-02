@@ -2,7 +2,7 @@ from typing import List
 
 from langchain_core.tools import Tool
 from langgraph.checkpoint.memory import MemorySaver
-from langgraph.constants import START
+from langgraph.constants import START, END
 from langgraph.graph.state import CompiledStateGraph, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 
@@ -22,8 +22,7 @@ class Graph:
 
         graph_builder.add_edge(START, "chat_node")
         graph_builder.add_conditional_edges(
-            "chatbot",
-            tools_condition,
+            "chat_node", tools_condition, {"tools": "tool_node", END: END}
         )
         graph_builder.add_edge("tool_node", "chat_node")
 
