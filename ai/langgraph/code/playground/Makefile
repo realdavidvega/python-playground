@@ -1,14 +1,35 @@
 # GLOBAL
 ##########################################################################
 
-lint:
-	uv run ruff format . && uv run ruff check . --fix
+CHECK_DIRS := .
 
 check:
+	uv run ty check
+	uv run ruff check $(CHECK_DIRS)
+
+format:
+	uv run ruff format $(CHECK_DIRS)
+
+fixes:
+	uv run ruff format $(CHECK_DIRS)
+	uv run ruff check $(CHECK_DIRS) --fix
 	uv run ty check
 
 sync:
 	uv sync
+
+# INFRA
+##########################################################################
+
+infra-up:
+	@if ! docker compose -p py-playground up --remove-orphans --wait; then \
+        		echo "Failed to start containers"; \
+        		docker compose -p py-playground logs; \
+        		exit 1; \
+    	fi
+
+infra-down:
+	docker-compose -p py-playground down
 
 # BASICS
 ##########################################################################
@@ -64,3 +85,5 @@ mcp-github:
 stocks-chatbot:
 	uv run python -m src.examples.stocks_chatbot.main
 
+spy-signals:
+	uv run python -m src.examples.spy_signals.main

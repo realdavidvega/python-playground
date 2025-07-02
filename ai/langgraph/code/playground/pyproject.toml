@@ -4,30 +4,48 @@ version = "0.1.0"
 description = "Playground of LangGraph"
 requires-python = ">=3.13"
 dependencies = [
-    "alpha-vantage>=3.0.0",
-    "fredapi>=0.5.2",
-    "langchain-community>=0.3.24",
-    "langchain-tavily>=0.2.1",
-    "langchain[anthropic,google-genai]>=0.3.25",
-    "langgraph>=0.4.8",
+    "pandas>=2.3.0",
+    "pydantic>=2.11.5",
+    "langchain-community>=0.3.26",
+    "langchain-tavily>=0.2.5",
+    "langchain[anthropic,google-genai]>=0.3.26",
+    "langchain-mcp-adapters>=0.1.8",
+    "langgraph>=0.5.0",
     "langgraph-supervisor>=0.0.27",
     "langgraph-swarm>=0.0.11",
-    "pandas>=2.3.0",
-    "tiktoken>=0.9.0", # needs ta-lib C library installed on your system
-    "ta-lib>=0.6.4",
-    "langchain-mcp-adapters>=0.1.7",
-    "mcp>=1.9.3",
-    "mcp-server-time>=0.6.2",
+    "mcp-server-time>=2025.7.1",
+    "alpha-vantage>=3.0.0",
+    "fredapi>=0.5.2",
+    "tiktoken>=0.9.0",
+    "ta-lib>=0.6.4", # needs ta-lib C library installed on your system
+    "fastmcp>=2.9.2",
+    "bs4>=0.0.2",
+    "pdf2image>=1.17.0", # needs poppler installed on your system
+    "pytesseract>=0.3.13",
 ]
 
 [dependency-groups]
 dev = [
-    "ruff>=0.11.13",
-    "ty>=0.0.1a8",
+    "ruff>=0.12.1",
+    "uv-build>=0.7.17",
+    "ty>=0.0.1a12",
 ]
 
+[build-system]
+requires = ["uv_build>=0.7.12,<0.8.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = true
+
+[tool.uv.build-backend]
+module-name = "playground"
+module-root = "src"
+
 [tool.ruff]
+target-version = "py313"
 exclude = [".venv", "__pycache__"]
 
 [tool.ty.src]
-root = "."
+root = "./src"
+

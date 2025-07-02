@@ -1,5 +1,17 @@
 services:
-  github_mcp:
+  vector-db:
+    container_name: py-playground-vector-db
+    image: mongodb/mongodb-atlas-local:8.0
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGODB_INITDB_ROOT_PASSWORD=mongoadmin
+    ports:
+      - "27017:27017"
+    volumes:
+      - data:/data/db
+      - config:/data/configdb
+  github-mcp:
+    container_name: py-playground-github-mcp
     image: supercorp/supergateway
     restart: unless-stopped
     command: >
@@ -9,4 +21,8 @@ services:
       - GITHUB_PERSONAL_ACCESS_TOKEN=${GITHUB_PASSWORD}
       - GITHUB_TOOLSETS=all
     ports:
-      - "8001:8001"
+      - "8002:8002"
+
+volumes:
+  data:
+  config:
