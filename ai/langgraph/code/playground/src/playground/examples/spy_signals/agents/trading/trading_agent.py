@@ -2,11 +2,13 @@ import pandas as pd
 import talib
 from langchain_core.language_models import LanguageModelLike
 from langchain_core.tools import tool
-from langgraph.graph.graph import CompiledGraph
+from langgraph.graph.state import CompiledStateGraph
 from langgraph.prebuilt import create_react_agent
 
 
-def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> CompiledGraph:
+def build_trading_agent(
+    model: LanguageModelLike, debug: bool = False
+) -> CompiledStateGraph:
     @tool
     def generate_trading_signal(
         spy_daily: list[float],

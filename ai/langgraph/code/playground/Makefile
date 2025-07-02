@@ -12,7 +12,7 @@ format:
 
 fixes:
 	uv run ruff format $(CHECK_DIRS)
-	uv run ruff check --select I --fix
+	uv run ruff check $(CHECK_DIRS) --fix
 	uv run ty check
 
 sync:

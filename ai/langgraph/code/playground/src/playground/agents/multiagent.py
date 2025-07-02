@@ -8,7 +8,7 @@ from langchain_core.tools import InjectedToolCallId, tool
 from langchain_tavily import TavilySearch
 from langgraph.constants import END, START
 from langgraph.graph import MessagesState, StateGraph
-from langgraph.graph.graph import CompiledGraph
+from langgraph.graph.state import CompiledStateGraph
 from langgraph.prebuilt import InjectedState, create_react_agent
 from langgraph.pregel import Pregel
 from langgraph.types import Command, Send
@@ -21,7 +21,7 @@ from playground.utils.print_utils import pretty_print_messages
 
 # Create worker agents
 # Research agent will have access to a web search tool using Tavily API
-def _create_research_agent(model: str, search_tool: TavilySearch) -> CompiledGraph:
+def _create_research_agent(model: str, search_tool: TavilySearch) -> CompiledStateGraph:
     return create_react_agent(
         model=init_chat_model(model=model, temperature=0),
         tools=[search_tool],
@@ -41,7 +41,7 @@ def _create_research_agent(model: str, search_tool: TavilySearch) -> CompiledGra
 
 
 # Math agent will have access to simple math tools (add, multiply, divide)
-def _create_math_agent(model: str) -> CompiledGraph:
+def _create_math_agent(model: str) -> CompiledStateGraph:
     def add(a: float, b: float):
         """Add two numbers."""
         return a + b
@@ -74,7 +74,7 @@ def _create_math_agent(model: str) -> CompiledGraph:
 
 # Create supervisor with langgraph-supervisor
 # To implement out multi-agent system, we will use create_supervisor from the prebuilt langgraph-supervisor library
-def _create_supervisor(model: str, agents: list[Pregel]) -> CompiledGraph:
+def _create_supervisor(model: str, agents: list[Pregel]) -> CompiledStateGraph:
     return create_supervisor(
         model=init_chat_model(model=model, temperature=0),
         agents=agents,
