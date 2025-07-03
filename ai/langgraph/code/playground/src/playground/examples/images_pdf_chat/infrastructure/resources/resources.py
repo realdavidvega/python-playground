@@ -21,6 +21,7 @@ class Resources:
 
     @classmethod
     def load(cls, config: Config) -> Self:
+        logger.info("Loading resources...")
         texts: str = ImageProcessor.process(config)
         vector_store: VectorStore = VectorStore.create(
             text=texts, model=config.GOOGLE_GENAI_EMBEDDING_MODEL

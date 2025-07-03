@@ -1,3 +1,4 @@
+import logging
 from typing import List, Self, TypeVar
 
 from langchain.chat_models import init_chat_model
@@ -14,6 +15,7 @@ from playground.examples.images_pdf_chat.infrastructure.resources.config import 
 Input = TypeVar("Input", contravariant=True)
 Output = TypeVar("Output", covariant=True)
 
+logger = logging.getLogger(__name__)
 
 @dataclass(config=BASE_CONFIG)
 class LLM:
@@ -29,4 +31,5 @@ class LLM:
         return cls(runnable=runnable)
 
     def invoke(self, runnable_input: Input) -> Output:
+        logger.info("Invoking LLM...")
         return self.runnable.invoke(runnable_input)

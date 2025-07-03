@@ -1,3 +1,4 @@
+import logging
 from typing import List
 
 from langchain_core.tools import Tool
@@ -13,10 +14,12 @@ from playground.examples.images_pdf_chat.infrastructure.resources.config import 
     Config,
 )
 
+logger = logging.getLogger(__name__)
 
 class Graph:
     @staticmethod
     def load(tools: List[Tool], config: Config) -> CompiledStateGraph:
+        logger.info("Loading graph...")
         graph_builder: StateGraph = StateGraph(State)
 
         llm: LLM = LLM.create(tools, config)
