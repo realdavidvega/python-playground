@@ -1,15 +1,19 @@
-from typing import List
+import sys
+from dataclasses import dataclass
 
-from langchain_core.tools import Tool
 
 from playground.examples.images_pdf_chat.application.graph.llm import LLM
 from playground.examples.images_pdf_chat.application.graph.state import State
-from playground.examples.images_pdf_chat.infrastructure.resources.config import Config
+
+CHAT_NODE: str = sys.intern("chat_node")
+TOOL_NODE: str = sys.intern("tool_node")
+TOOLS: str = sys.intern("tools")
+CONFIRMATION: str = sys.intern("confirmation")
 
 
+@dataclass(frozen=True)
 class ChatNode:
-    def __init__(self, tools: List[Tool], config: Config) -> None:
-        self.llm = LLM.load(tools, config)
+    llm: LLM
 
     def __call__(self, state: State) -> State:
         state["messages"].extend([self.llm.invoke(state["messages"])])

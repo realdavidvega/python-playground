@@ -13,5 +13,5 @@ from playground.examples.images_pdf_chat.infrastructure.resources.resources impo
 class Tools:
     @staticmethod
     def load(resources: Resources) -> List[Tool]:
-        retrieval_tool: Tool = RetrievalTool(resources.vector_store).tool
+        retrieval_tool: Tool = RetrievalTool.create(resources.vector_store).tool
         return [retrieval_tool]

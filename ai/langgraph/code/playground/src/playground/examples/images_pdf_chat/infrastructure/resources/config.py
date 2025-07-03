@@ -14,3 +14,9 @@ class Config(FrozenBaseSettings):
     # Model settings
     USE_OPENAI: bool = True
     TEMPERATURE: float = 0.0
+
+    # PDF settings
+    FILE_PATH: str = ""
+
+    # Mocks
+    USE_MOCK_TEXT: bool = True

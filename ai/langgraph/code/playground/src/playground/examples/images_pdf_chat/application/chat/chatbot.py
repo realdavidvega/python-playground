@@ -1,12 +1,13 @@
 import uuid
+from dataclasses import dataclass
 
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.state import CompiledStateGraph
 
 
+@dataclass(frozen=True)
 class Chatbot:
-    def __init__(self, graph: CompiledStateGraph):
-        self.graph = graph
+    graph: CompiledStateGraph
 
     def run(self):
         while True:
