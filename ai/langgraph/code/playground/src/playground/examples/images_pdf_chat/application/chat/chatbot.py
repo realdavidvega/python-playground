@@ -1,15 +1,11 @@
 import uuid
+from dataclasses import dataclass
 
 from langchain_core.runnables import RunnableConfig
 from langgraph.graph.state import CompiledStateGraph
-from pydantic.dataclasses import dataclass
-
-from playground.examples.images_pdf_chat.infrastructure.resources.config import (
-    BASE_CONFIG,
-)
 
 
-@dataclass(config=BASE_CONFIG)
+@dataclass(frozen=True)
 class Chatbot:
     graph: CompiledStateGraph
 

@@ -1,4 +1,5 @@
 import logging
+from logging import Logger
 from typing import List
 
 from langchain_core.tools import Tool
@@ -14,7 +15,7 @@ from playground.examples.images_pdf_chat.infrastructure.resources.config import 
     Config,
 )
 
-logger = logging.getLogger(__name__)
+logger: Logger = logging.getLogger(__name__)
 
 class Graph:
     @staticmethod

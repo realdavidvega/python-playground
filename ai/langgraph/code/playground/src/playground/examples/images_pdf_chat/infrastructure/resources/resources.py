@@ -1,7 +1,7 @@
 import logging
+from dataclasses import dataclass
+from logging import Logger
 from typing import Self
-
-from pydantic.dataclasses import dataclass
 
 from playground.examples.images_pdf_chat.infrastructure.image_processor import (
     ImageProcessor,
@@ -9,13 +9,12 @@ from playground.examples.images_pdf_chat.infrastructure.image_processor import (
 from playground.examples.images_pdf_chat.infrastructure.vector_store import VectorStore
 from playground.examples.images_pdf_chat.infrastructure.resources.config import (
     Config,
-    BASE_CONFIG,
 )
 
-logger = logging.getLogger(__name__)
+logger: Logger = logging.getLogger(__name__)
 
 
-@dataclass(config=BASE_CONFIG)
+@dataclass(frozen=True)
 class Resources:
     vector_store: VectorStore
 

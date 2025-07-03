@@ -1,15 +1,11 @@
+from dataclasses import dataclass
 from typing import Self
 
 from langchain_core.vectorstores import InMemoryVectorStore, VectorStoreRetriever
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from pydantic.dataclasses import dataclass
-
-from playground.examples.images_pdf_chat.infrastructure.resources.config import (
-    BASE_CONFIG,
-)
 
 
-@dataclass(config=BASE_CONFIG)
+@dataclass(frozen=True)
 class VectorStore:
     retriever: VectorStoreRetriever
 

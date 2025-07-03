@@ -1,15 +1,11 @@
+from dataclasses import dataclass
 from typing import Self
 
 from langchain_core.tools import create_retriever_tool, Tool
-from pydantic.dataclasses import dataclass
-
-from playground.examples.images_pdf_chat.infrastructure.resources.config import (
-    BASE_CONFIG,
-)
 from playground.examples.images_pdf_chat.infrastructure.vector_store import VectorStore
 
 
-@dataclass(config=BASE_CONFIG)
+@dataclass(frozen=True)
 class RetrievalTool:
     tool: Tool
 

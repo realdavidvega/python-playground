@@ -1,13 +1,11 @@
-from pydantic.dataclasses import dataclass
+from dataclasses import dataclass
 
 from playground.examples.images_pdf_chat.application.graph.llm import LLM
 from playground.examples.images_pdf_chat.application.graph.state import State
-from playground.examples.images_pdf_chat.infrastructure.resources.config import (
-    BASE_CONFIG,
-)
 
 
-@dataclass(config=BASE_CONFIG)
+
+@dataclass(frozen=True)
 class ChatNode:
     llm: LLM
 

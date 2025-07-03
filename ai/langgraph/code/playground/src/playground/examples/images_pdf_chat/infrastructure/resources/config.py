@@ -1,8 +1,6 @@
 from pydantic import ConfigDict
 from pydantic_settings import BaseSettings
 
-BASE_CONFIG = ConfigDict(arbitrary_types_allowed=True, frozen=True)
-
 
 class FrozenBaseSettings(BaseSettings):
     model_config = ConfigDict(frozen=True)
