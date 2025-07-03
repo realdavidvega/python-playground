@@ -15,6 +15,7 @@ from playground.examples.images_pdf_chat.infrastructure.resources.config import 
 
 logger: Logger = logging.getLogger(__name__)
 
+
 @dataclass(frozen=True)
 class LLM:
     runnable: Runnable
