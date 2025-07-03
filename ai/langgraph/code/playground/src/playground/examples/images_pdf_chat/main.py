@@ -15,12 +15,8 @@ from playground.examples.images_pdf_chat.infrastructure.resources.resources impo
 logging.basicConfig(level=logging.INFO)
 
 if __name__ == "__main__":
-    file: str = input("Please enter the absolute path of the PDF file: ")
-
     config: Config = Config()
-    resources: Resources = Resources(file, config)
+    resources: Resources = Resources.load(config)
     tools: List[Tool] = Tools.load(resources)
-
-    graph: CompiledStateGraph = Graph.compile(tools, config)
-
+    graph: CompiledStateGraph = Graph.load(tools, config)
     Chatbot(graph).run()

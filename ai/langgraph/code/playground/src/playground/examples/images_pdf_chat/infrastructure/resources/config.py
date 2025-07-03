@@ -1,6 +1,8 @@
 from pydantic import ConfigDict
 from pydantic_settings import BaseSettings
 
+BASE_CONFIG = ConfigDict(arbitrary_types_allowed=True, frozen=True)
+
 
 class FrozenBaseSettings(BaseSettings):
     model_config = ConfigDict(frozen=True)
@@ -14,3 +16,9 @@ class Config(FrozenBaseSettings):
     # Model settings
     USE_OPENAI: bool = True
     TEMPERATURE: float = 0.0
+
+    # PDF settings
+    FILE_PATH: str = ""
+
+    # Mocks
+    USE_MOCK_TEXT: bool = True
