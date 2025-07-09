@@ -17,19 +17,15 @@ dependencies = [
     "alpha-vantage>=3.0.0",
     "fredapi>=0.5.2",
     "tiktoken>=0.9.0",
-    "ta-lib>=0.6.4", # needs ta-lib C library installed on your system
-    "fastmcp>=2.9.2",
+    "ta-lib>=0.6.4",                             # needs ta-lib C library installed on your system
+    "fastmcp>=2.10.4",
     "bs4>=0.0.2",
-    "pdf2image>=1.17.0", # needs poppler installed on your system
+    "pdf2image>=1.17.0",                         # needs poppler installed on your system
     "pytesseract>=0.3.13",
 ]
 
 [dependency-groups]
-dev = [
-    "ruff>=0.12.1",
-    "uv-build>=0.7.19",
-    "ty>=0.0.1a12",
-]
+dev = ["ruff>=0.12.1", "uv-build>=0.7.19", "ty>=0.0.1a12"]
 
 [build-system]
 requires = ["uv_build>=0.7.12,<0.8.0"]
@@ -43,9 +39,12 @@ module-name = "playground"
 module-root = "src"
 
 [tool.ruff]
+line-length = 120
 target-version = "py313"
 exclude = [".venv", "__pycache__"]
 
-[tool.ty.src]
-root = "./src"
+[tool.ruff.lint]
+extend-select = ["I"]
 
+[tool.ty.environment]
+root = ["./src"]
