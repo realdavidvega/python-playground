@@ -58,10 +58,7 @@ def main():
             "messages": [
                 {
                     "role": "user",
-                    "content": (
-                        "I'm learning LangGraph. "
-                        "Could you do some research on it for me?"
-                    ),
+                    "content": ("I'm learning LangGraph. Could you do some research on it for me?"),
                 },
             ],
         },

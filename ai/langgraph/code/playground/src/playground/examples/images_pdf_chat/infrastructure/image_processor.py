@@ -3,8 +3,8 @@ from pathlib import Path
 from typing import List
 
 import pytesseract
-from PIL.Image import Image
 from pdf2image import convert_from_path
+from PIL.Image import Image
 
 from playground.examples.images_pdf_chat.infrastructure.resources.config import Config
 

@@ -63,9 +63,7 @@ def main_basic_tools():
                 raise ValueError("No message found in input")
             outputs = []
             for tool_call in message.tool_calls:
-                tool_result = self.tools_by_name[tool_call["name"]].invoke(
-                    tool_call["args"]
-                )
+                tool_result = self.tools_by_name[tool_call["name"]].invoke(tool_call["args"])
                 outputs.append(
                     ToolMessage(
                         content=json.dumps(tool_result),
@@ -125,9 +123,7 @@ def main_basic_tools():
     graph = graph_builder.compile()
 
     def stream_graph_updates(user_input: str):
-        for event in graph.stream(
-            {"messages": [{"role": "user", "content": user_input}]}
-        ):
+        for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)
 
@@ -173,9 +169,7 @@ def main():
     graph = graph_builder.compile()
 
     def stream_graph_updates(user_input: str):
-        for event in graph.stream(
-            {"messages": [{"role": "user", "content": user_input}]}
-        ):
+        for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)
 

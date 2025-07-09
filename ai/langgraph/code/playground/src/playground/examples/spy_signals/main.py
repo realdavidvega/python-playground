@@ -114,9 +114,7 @@ def main():
     # ):
     #     pretty_print_messages(event, last_message=True)
 
-    trading_agent = build_trading_agent(
-        model=agents_config.trading_agent_model, debug=agents_config.debug
-    )
+    trading_agent = build_trading_agent(model=agents_config.trading_agent_model, debug=agents_config.debug)
 
     # Test the trading agent
     # for event in trading_agent.stream(

@@ -38,14 +38,10 @@ def build_usd_agent(
                 0.84,
             ]
         else:
-            exchange_rate_data = finance.foreign_exchange.get_currency_exchange_rate(
-                "USD", "EUR"
-            )
+            exchange_rate_data = finance.foreign_exchange.get_currency_exchange_rate("USD", "EUR")
 
             # get last 20 exchange rates
-            exchange_rates = [
-                rate["5. Exchange Rate"] for rate in exchange_rate_data[:-20]
-            ]
+            exchange_rates = [rate["5. Exchange Rate"] for rate in exchange_rate_data[:-20]]
 
             print(f"Called get_usd__eur_rate tool: {exchange_rates}")
             return exchange_rates

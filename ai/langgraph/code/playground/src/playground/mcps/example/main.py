@@ -43,17 +43,11 @@ async def main():
     agent = create_react_agent("google_genai:gemini-2.0-flash", tools)
 
     # Use the agent to interact with the MCP servers.
-    math_response = await agent.ainvoke(
-        {"messages": [{"role": "user", "content": "what's (3 + 5) x 12?"}]}
-    )
+    math_response = await agent.ainvoke({"messages": [{"role": "user", "content": "what's (3 + 5) x 12?"}]})
 
-    weather_response = await agent.ainvoke(
-        {"messages": [{"role": "user", "content": "what is the weather in NYC?"}]}
-    )
+    weather_response = await agent.ainvoke({"messages": [{"role": "user", "content": "what is the weather in NYC?"}]})
 
-    time_response = await agent.ainvoke(
-        {"messages": [{"role": "user", "content": "what the time in NYC?"}]}
-    )
+    time_response = await agent.ainvoke({"messages": [{"role": "user", "content": "what the time in NYC?"}]})
 
     print(math_response["messages"][-1].content)
     print(weather_response["messages"][-1].content)

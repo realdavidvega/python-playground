@@ -35,9 +35,7 @@ def main():
     # information before it is stored in the state. Use Command to issue a state update from inside the tool.
 
     @tool
-    def human_assistance(
-        name: str, birthday: str, tool_call_id: Annotated[str, InjectedToolCallId]
-    ) -> Command:
+    def human_assistance(name: str, birthday: str, tool_call_id: Annotated[str, InjectedToolCallId]) -> Command:
         """Request assistance from a human."""
         human_response = interrupt(
             {

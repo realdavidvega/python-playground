@@ -34,9 +34,7 @@ class Graph:
         graph_builder.add_node(TOOL_NODE, ToolNode(tools=tools))
 
         graph_builder.add_edge(START, CHAT_NODE)
-        graph_builder.add_conditional_edges(
-            CHAT_NODE, tools_condition, {TOOLS: TOOL_NODE, END: END}
-        )
+        graph_builder.add_conditional_edges(CHAT_NODE, tools_condition, {TOOLS: TOOL_NODE, END: END})
         graph_builder.add_edge(TOOL_NODE, CHAT_NODE)
 
         return graph_builder.compile(checkpointer=MemorySaver())

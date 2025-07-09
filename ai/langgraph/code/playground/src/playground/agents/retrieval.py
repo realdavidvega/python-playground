@@ -39,9 +39,7 @@ def _pre_process_docs() -> list[Document]:
     docs_list = [item for sublist in docs for item in sublist]
 
     # Split the fetched documents into smaller chunks for indexing into our vectorstore
-    text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-        chunk_size=100, chunk_overlap=50
-    )
+    text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size=100, chunk_overlap=50)
 
     return text_splitter.split_documents(docs_list)
 
@@ -98,9 +96,7 @@ def _grade_documents(
     class GradeDocuments(BaseModel):
         """Grade documents using a binary score for relevance check."""
 
-        binary_score: str = Field(
-            description="Relevance score: 'yes' if relevant, or 'no' if not relevant"
-        )
+        binary_score: str = Field(description="Relevance score: 'yes' if relevant, or 'no' if not relevant")
 
     grade_prompt = """
         You are a grader assessing relevance of a retrieved document to a user question.
@@ -113,12 +109,8 @@ def _grade_documents(
         """
 
     grader_model = init_chat_model(model=model, temperature=0)
-    prompt = grade_prompt.format(
-        question=state["messages"][0].content, context=state["messages"][-1].content
-    )
-    response = grader_model.with_structured_output(GradeDocuments).invoke(
-        [{"role": "user", "content": prompt}]
-    )
+    prompt = grade_prompt.format(question=state["messages"][0].content, context=state["messages"][-1].content)
+    response = grader_model.with_structured_output(GradeDocuments).invoke([{"role": "user", "content": prompt}])
 
     if isinstance(response, dict):
         score = response["binary_score"]
@@ -365,14 +357,10 @@ def main():
         )
     )
 
-    response = _generate_answer(
-        model="google_genai:gemini-2.0-flash", state=input_messages
-    )
+    response = _generate_answer(model="google_genai:gemini-2.0-flash", state=input_messages)
     response["messages"][-1].pretty_print()
 
-    retrieval_graph = _build_graph(
-        model="google_genai:gemini-2.0-flash", retriever_tool=retriever_tool
-    )
+    retrieval_graph = _build_graph(model="google_genai:gemini-2.0-flash", retriever_tool=retriever_tool)
 
     for chunk in retrieval_graph.stream(
         {

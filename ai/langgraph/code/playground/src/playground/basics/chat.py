@@ -80,9 +80,7 @@ def main():
 
     def stream_graph_updates(user_input: str):
         # Yields a stream of updates from the graph, given the user's input
-        for event in graph.stream(
-            {"messages": [{"role": "user", "content": user_input}]}
-        ):
+        for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
             # For each update, print the assistant's response
             for value in event.values():
                 print("Assistant:", value["messages"][-1].content)

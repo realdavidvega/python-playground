@@ -39,9 +39,7 @@ def build_spy_agent(
             ]
         else:
             stock_data = finance.time_series.get_daily("SPY", outputsize="compact")[0]
-            close_prices = [float(stock_data[date]["4. close"]) for date in stock_data][
-                -20:
-            ]
+            close_prices = [float(stock_data[date]["4. close"]) for date in stock_data][-20:]
             print("Called get_daily_data tool")
             return close_prices
 

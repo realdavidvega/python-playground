@@ -56,9 +56,7 @@ def main():
     ).compile()
 
     def stream_updates(user_content: str):
-        for chunk in swarm.stream(
-            {"messages": [{"role": "user", "content": user_content}]}
-        ):
+        for chunk in swarm.stream({"messages": [{"role": "user", "content": user_content}]}):
             print(f"Output: {chunk}\n")
 
     while True:

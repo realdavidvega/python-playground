@@ -6,9 +6,7 @@ from langgraph.graph.state import CompiledStateGraph
 from langgraph.prebuilt import create_react_agent
 
 
-def build_trading_agent(
-    model: LanguageModelLike, debug: bool = False
-) -> CompiledStateGraph:
+def build_trading_agent(model: LanguageModelLike, debug: bool = False) -> CompiledStateGraph:
     @tool
     def generate_trading_signal(
         spy_daily: list[float],
@@ -21,9 +19,7 @@ def build_trading_agent(
         Returns 'buy', 'sell', or 'hold'.
         """
 
-        print(
-            f"Called generate_trading_signal tool: {spy_daily}, {usd_eur_rates}, {interest_rates}"
-        )
+        print(f"Called generate_trading_signal tool: {spy_daily}, {usd_eur_rates}, {interest_rates}")
 
         df = pd.DataFrame(
             {
