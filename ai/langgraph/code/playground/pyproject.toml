@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.12.1", "uv-build>=0.7.19", "ty>=0.0.1a12"]
+dev = ["ruff>=0.12.1", "uv-build>=0.7.19", "ty>=0.0.1a14"]
 
 [build-system]
 requires = ["uv_build>=0.7.12,<0.8.0"]
