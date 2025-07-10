@@ -25,18 +25,10 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.12.1", "uv-build>=0.7.19", "ty>=0.0.1a14"]
-
-[build-system]
-requires = ["uv_build>=0.7.12,<0.8.0"]
-build-backend = "uv_build"
+dev = ["ruff>=0.12.2", "uv-build>=0.7.19", "pyrefly>=0.23.0"]
 
 [tool.uv]
 package = true
-
-[tool.uv.build-backend]
-module-name = "playground"
-module-root = "src"
 
 [tool.ruff]
 line-length = 120
@@ -46,5 +38,10 @@ exclude = [".venv", "__pycache__"]
 [tool.ruff.lint]
 extend-select = ["I"]
 
-[tool.ty.environment]
-root = ["./src"]
+[tool.pyrefly]
+project-includes = ["src"]
+project-excludes = ["**/.[!/.]*", "**/*venv/**"]
+search-path = ["src"]
+
+# [tool.ty.environment]
+# root = ["./src"]
