@@ -4,17 +4,17 @@
 CHECK_DIRS := .
 
 check:
-	uv run pyrefly check
-	uv run ruff check
+	uv run ruff check $(CHECK_DIR)
+	uv run pyrefly check $(CHECK_DIR)
 	# uv run ty check
 
 format:
-	uv run ruff format $(CHECK_DIRS)
+	uv run ruff format $(CHECK_DIR)
 
 fixes:
-	uv run ruff format $(CHECK_DIRS)
-	uv run ruff check $(CHECK_DIRS) --fix
-	uv run pyrefly check
+	uv run ruff format $(CHECK_DIR)
+	uv run ruff check $(CHECK_DIR) --fix
+	uv run pyrefly check $(CHECK_DIR)
 	# uv run ty check
 
 sync:
