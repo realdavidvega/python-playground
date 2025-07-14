@@ -1,7 +1,6 @@
 import sys
 from dataclasses import dataclass
 
-
 from playground.examples.images_pdf_chat.application.graph.llm import LLM
 from playground.examples.images_pdf_chat.application.graph.state import State
 

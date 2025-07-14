@@ -1,7 +1,8 @@
 from dataclasses import dataclass
-from typing import Self, ClassVar
+from typing import ClassVar, Self
 
-from langchain_core.tools import create_retriever_tool, Tool
+from langchain_core.tools import Tool, create_retriever_tool
+
 from playground.examples.images_pdf_chat.infrastructure.vector_store import VectorStore
 
 

@@ -1,7 +1,7 @@
 # GLOBAL
 ##########################################################################
 
-CHECK_DIRS := .
+CHECK_DIR := .
 
 check:
 	uv run ruff check $(CHECK_DIR)
