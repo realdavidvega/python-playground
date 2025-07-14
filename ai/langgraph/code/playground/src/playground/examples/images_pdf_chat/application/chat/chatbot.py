@@ -16,9 +16,7 @@ class Chatbot:
                 print("Goodbye!")
                 break
 
-            graph_config: RunnableConfig = RunnableConfig(
-                configurable={"thread_id": uuid.uuid4().hex}
-            )
+            graph_config: RunnableConfig = RunnableConfig(configurable={"thread_id": uuid.uuid4().hex})
             self.__stream_graph_updates(user_input, graph_config)
 
     def __stream_graph_updates(self, content: str, graph_config: RunnableConfig):

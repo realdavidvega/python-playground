@@ -146,16 +146,12 @@ def _run_multi_agent_supervisor(model: str):
             ),
         )
         response = agent.invoke(state)
-        return MessagesState(
-            messages=[{"role": "user", "content": response["messages"][-1].content}]
-        )
+        return MessagesState(messages=[{"role": "user", "content": response["messages"][-1].content}])
 
     def math_agent(state):
         agent = _create_math_agent(model=model)
         response = agent.invoke(state)
-        return MessagesState(
-            messages=[{"role": "user", "content": response["messages"][-1].content}]
-        )
+        return MessagesState(messages=[{"role": "user", "content": response["messages"][-1].content}])
 
     # Handoffs
     assign_to_research_agent = create_handoff_tool(
@@ -227,9 +223,7 @@ def _run_multi_agent_supervisor(model: str):
 # An alternative approach is to ask the supervisor to formulate a task explicitly.
 # We can do so by adding a task_description parameter to the handoff_tool function.
 def _run_multi_agent_supervisor_delegating(model: str):
-    def create_task_description_handoff_tool(
-        *, agent_name: str, description: str | None = None
-    ):
+    def create_task_description_handoff_tool(*, agent_name: str, description: str | None = None):
         name = f"transfer_to_{agent_name}"
         description = description or f"Ask {agent_name} for help."
 
@@ -263,16 +257,12 @@ def _run_multi_agent_supervisor_delegating(model: str):
             ),
         )
         response = agent.invoke(state)
-        return MessagesState(
-            messages=[{"role": "user", "content": response["messages"][-1].content}]
-        )
+        return MessagesState(messages=[{"role": "user", "content": response["messages"][-1].content}])
 
     def math_agent(state):
         agent = _create_math_agent(model=model)
         response = agent.invoke(state)
-        return MessagesState(
-            messages=[{"role": "user", "content": response["messages"][-1].content}]
-        )
+        return MessagesState(messages=[{"role": "user", "content": response["messages"][-1].content}])
 
     assign_to_research_agent_with_description = create_task_description_handoff_tool(
         agent_name="research_agent",
@@ -334,9 +324,7 @@ def _run_multi_agent_supervisor_delegating(model: str):
 
 def main():
     # Create the web search tool
-    web_search = TavilySearch(
-        max_results=3, search_depth="advanced", topic="finance", time_range="year"
-    )
+    web_search = TavilySearch(max_results=3, search_depth="advanced", topic="finance", time_range="year")
 
     # Call the web search tool
     # web_search_results = web_search.invoke("who is the mayor of NYC?")

@@ -47,9 +47,7 @@ def create_handoff_tool(*, agent_name: str, description: str | None = None):
 def __call_tools(state):
     tools_by_name = {}
     tool_calls = state["messages"]
-    commands = [
-        tools_by_name[tool_call["name"]].invoke(tool_call) for tool_call in tool_calls
-    ]
+    commands = [tools_by_name[tool_call["name"]].invoke(tool_call) for tool_call in tool_calls]
     return commands
 
 
@@ -68,9 +66,7 @@ def __call_hotel_assistant(state):
 # Control agent inputs
 # You can use the Send() primitive to directly send data to the worker agents during the handoff.
 # For example, you can request that the calling agent populate a task description for the next agent
-def create_task_description_handoff_tool(
-    *, agent_name: str, description: str | None = None
-):
+def create_task_description_handoff_tool(*, agent_name: str, description: str | None = None):
     name = f"transfer_to_{agent_name}"
     description = description or f"Ask {agent_name} for help."
 
